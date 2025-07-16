@@ -61,5 +61,15 @@
         .preview-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem;}
         .preview-grid img { width: 100%; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
     </style>
+    <script>
+    // Script untuk mencegah klik kanan pada gambar
+    document.addEventListener('contextmenu', function(e) {
+        // Periksa apakah target klik adalah tag 'IMG' (gambar)
+        if (e.target.nodeName === 'IMG') {
+            // Jika ya, batalkan aksi default (menampilkan menu klik kanan)
+            e.preventDefault();
+        }
+    }, false);
+</script>
 </body>
 </html>
