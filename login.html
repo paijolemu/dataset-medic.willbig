@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Paijo Willbig</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .login-container {
+            max-width: 400px;
+            margin: 5rem auto;
+            padding: 2rem;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(44, 62, 80, 0.1);
+            text-align: center;
+        }
+        .login-container input {
+            width: 100%;
+            padding: 0.8rem;
+            margin-top: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 0.8rem;
+            margin-top: 1.5rem;
+            border: none;
+            border-radius: 50px;
+            background-color: #3498db;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .login-container button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Paijo Willbig</a>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="datasets.html">Datasets</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="login-container">
+            <h2>Halaman Terproteksi</h2>
+            <p>Silakan masukkan password untuk melanjutkan.</p>
+            <input type="password" id="passwordInput" placeholder="Masukkan Password...">
+            <button onclick="checkPassword()">Masuk</button>
+        </div>
+    </main>
+
+    <script>
+        function checkPassword() {
+            // Ini adalah password rahasia Anda
+            const correctPassword = "medisdata2025";
+            
+            // Mengambil nilai yang diketik pengguna
+            let userInput = document.getElementById("passwordInput").value;
+            
+            // Memeriksa apakah password benar
+            if (userInput === correctPassword) {
+                // Jika benar, arahkan ke halaman rahasia
+                window.location.href = "download-premium.html";
+            } else {
+                // Jika salah, beri peringatan
+                alert("Password salah! Silakan coba lagi.");
+            }
+        }
+    </script>
+</body>
+</html>
