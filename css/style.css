@@ -177,7 +177,13 @@ nav a:hover::after {
 
 .tags {
     margin: 1rem 0;
+    /* Menggunakan Flexbox untuk merapikan */
+    display: flex;
+    flex-wrap: wrap; /* Izinkan tag turun ke baris baru jika tidak muat */
+    gap: 0.5rem; /* Memberi jarak seragam antar tag */
+    align-items: center; /* Menyejajarkan tag secara vertikal */
 }
+
 .tags span {
     background-color: #ecf0f1;
     color: #777;
