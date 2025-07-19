@@ -185,13 +185,13 @@ nav a:hover::after {
 }
 
 .tags span {
-    background-color: #ecf0f1;
-    color: #777;
-    padding: 0.4rem 0.8rem;
-    border-radius: 15px;
-    font-size: 0.8rem;
-    margin-right: 0.5rem;
+    background-color: #e9ecef; /* Warna latar sedikit lebih gelap agar kontras */
+    color: #212529; /* Warna hitam pekat untuk teks */
+    padding: 0.25rem 0.6rem; /* Padding lebih kecil agar lebih ramping */
+    border-radius: 50px; /* Lebih bulat agar serasi dengan tombol */
+    font-size: 0.75rem; /* Ukuran font lebih kecil */
     font-weight: 600;
+    border: 1px solid #dee2e6; /* Menambah garis tepi tipis */
 }
 
 .btn-card {
