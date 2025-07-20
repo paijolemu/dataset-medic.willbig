@@ -4,16 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Paijo Willbig</title>
+    <!-- Font Awesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <style>
+        /* Gaya khusus untuk kotak login, agar tetap di tengah */
         .login-container {
             max-width: 400px;
-            margin: 5rem auto;
-            padding: 2rem;
+            margin: 3rem auto;
+            padding: 2.5rem;
             background-color: #fff;
             border-radius: 12px;
             box-shadow: 0 10px 25px rgba(44, 62, 80, 0.1);
             text-align: center;
+        }
+        .login-container h2 {
+            color: #2c3e50;
         }
         .login-container input {
             width: 100%;
@@ -41,39 +47,41 @@
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="index.html" class="logo">Paijo Willbig</a>
-            <ul>
-                <li><a href="index.html">Beranda</a></li>
-                <li><a href="datasets.html">Datasets</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="page-wrapper">
+        <!-- ===== Sidebar ===== -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <button class="toggle-btn" id="toggle-btn"><i class="fas fa-bars"></i></button>
+                <a href="index.html" class="logo">Paijo Willbig</a>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-link"><i class="fas fa-home"></i><span class="link-text">Beranda</span></a>
+                <a href="datasets.html" class="nav-link active"><i class="fas fa-database"></i><span class="link-text">Datasets</span></a>
+                <a href="about.html" class="nav-link"><i class="fas fa-users"></i><span class="link-text">Tentang Kami</span></a>
+            </nav>
+        </aside>
 
-    <main class="container">
-        <div class="login-container">
-            <h2>Halaman Terproteksi</h2>
-            <p>Silakan masukkan password untuk melanjutkan.</p>
-            <input type="password" id="passwordInput" placeholder="Masukkan Password...">
-            <button onclick="checkPassword()">Masuk</button>
-        </div>
-    </main>
+        <!-- ===== Konten Utama Halaman ===== -->
+        <main class="main-content">
+            <div class="login-container">
+                <h2>Halaman Terproteksi</h2>
+                <p>Silakan masukkan password untuk melanjutkan.</p>
+                <input type="password" id="passwordInput" placeholder="Masukkan Password...">
+                <button onclick="checkPassword()">Masuk</button>
+            </div>
+        </main>
+    </div>
 
+    <!-- Script untuk fungsi sidebar & fungsi login -->
+    <script src="js/main.js"></script>
     <script>
         function checkPassword() {
-            // Ini adalah password rahasia Anda
             const correctPassword = "medisdata2025";
-            
-            // Mengambil nilai yang diketik pengguna
             let userInput = document.getElementById("passwordInput").value;
             
-            // Memeriksa apakah password benar
             if (userInput === correctPassword) {
-                // Jika benar, arahkan ke halaman rahasia
                 window.location.href = "download-premium.html";
             } else {
-                // Jika salah, beri peringatan
                 alert("Password salah! Silakan coba lagi.");
             }
         }
