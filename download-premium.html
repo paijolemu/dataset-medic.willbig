@@ -4,32 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Download Premium - Paijo Willbig</title>
+    <!-- Font Awesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="index.html" class="logo">Paijo Willbig</a>
-            <ul>
-                <li><a href="index.html">Beranda</a></li>
-                <li><a href="datasets.html">Datasets</a></li>
-                <li><a href="#">Tentang Kami</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="page-wrapper">
+        <!-- ===== Sidebar ===== -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <button class="toggle-btn" id="toggle-btn"><i class="fas fa-bars"></i></button>
+                <a href="index.html" class="logo">Paijo Willbig</a>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-link"><i class="fas fa-home"></i><span class="link-text">Beranda</span></a>
+                <a href="datasets.html" class="nav-link active"><i class="fas fa-database"></i><span class="link-text">Datasets</span></a>
+                <a href="about.html" class="nav-link"><i class="fas fa-users"></i><span class="link-text">Tentang Kami</span></a>
+            </nav>
+        </aside>
 
-    <main class="container">
-        <section class="dataset-detail">
-            <h1>Akses Diberikan!</h1>
-            <p>Terima kasih telah memasukkan password yang benar. Silakan unduh dataset premium di bawah ini.</p>
+        <!-- ===== Konten Utama Halaman ===== -->
+        <main class="main-content">
+            <header class="content-header">
+                <h1>Akses Diberikan!</h1>
+            </header>
             
-            <!-- Ganti link '#' dengan link download asli Anda di masa depan -->
-            <a href="#" class="btn">Download Dataset EEG Sinyal Otak (.zip)</a>
-        </section>
-    </main>
-
-    <footer>
-        <p>© 2025 Proyek Dataset Medis. Dibuat dengan semangat oleh Paijo.</p>
-    </footer>
+            <section class="dataset-detail">
+                <p>Terima kasih telah memasukkan password yang benar. Silakan unduh dataset premium di bawah ini.</p>
+                
+                <!-- Ganti link '#' dengan link download asli Anda di masa depan -->
+                <a href="#" class="btn">Download Dataset EEG Sinyal Otak (.zip)</a>
+            </section>
+        </main>
+    </div>
+    <!-- Script untuk fungsi sidebar -->
+    <script src="js/main.js"></script>
 </body>
 </html>
