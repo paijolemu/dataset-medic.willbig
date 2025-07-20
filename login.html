@@ -44,6 +44,20 @@
         .login-container button:hover {
             background-color: #2980b9;
         }
+
+                .password-wrapper {
+            position: relative;
+            width: 100%;
+        }
+        .password-wrapper i {
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #aaa;
+        }
+        
     </style>
 </head>
 <body>
@@ -66,7 +80,10 @@
             <div class="login-container">
                 <h2>Halaman Terproteksi</h2>
                 <p>Silakan masukkan password untuk melanjutkan.</p>
-                <input type="password" id="passwordInput" placeholder="Masukkan Password...">
+                <div class="password-wrapper">
+    <input type="password" id="passwordInput" placeholder="Masukkan Password...">
+    <i class="fas fa-eye" id="togglePassword"></i>
+</div>
                 <button onclick="checkPassword()">Masuk</button>
             </div>
         </main>
@@ -74,17 +91,41 @@
 
     <!-- Script untuk fungsi sidebar & fungsi login -->
     <script src="js/main.js"></script>
-    <script>
-        function checkPassword() {
-            const correctPassword = "medisdata2025";
-            let userInput = document.getElementById("passwordInput").value;
-            
-            if (userInput === correctPassword) {
-                window.location.href = "download-premium.html";
-            } else {
-                alert("Password salah! Silakan coba lagi.");
-            }
+ <script>
+    const passwordInput = document.getElementById("passwordInput");
+    const togglePassword = document.getElementById("togglePassword");
+
+    // Fungsi untuk toggle visible/hidden password
+    togglePassword.addEventListener('click', function() {
+        // Ganti tipe input
+        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordInput.setAttribute('type', type);
+        
+        // Ganti ikon mata
+        this.classList.toggle('fa-eye-slash');
+    });
+
+    // Fungsi untuk mengecek password (tetap sama)
+    function checkPassword() {
+        const correctPassword = "medisdata2025";
+        let userInput = passwordInput.value;
+        
+        if (userInput === correctPassword) {
+            window.location.href = "download-premium.html";
+        } else {
+            alert("Password salah! Silakan coba lagi.");
         }
-    </script>
+    }
+
+    // Fungsi untuk mendengarkan tombol Enter
+    passwordInput.addEventListener('keyup', function(event) {
+        // Periksa apakah tombol yang ditekan adalah 'Enter'
+        if (event.key === 'Enter') {
+            // Batalkan aksi default (jika ada) dan jalankan fungsi checkPassword
+            event.preventDefault();
+            checkPassword();
+        }
+    });
+</script>
 </body>
 </html>
