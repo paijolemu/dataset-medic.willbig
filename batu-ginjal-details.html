@@ -4,54 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detail Dataset Batu Ginjal - Paijo Willbig</title>
+    <!-- Font Awesome untuk Ikon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="index.html" class="logo">Paijo Willbig</a>
-            <ul>
-                <li><a href="index.html">Beranda</a></li>
-                <li><a href="datasets.html">Datasets</a></li>
-                <li><a href="#">Tentang Kami</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main class="container">
-        <!-- Bagian Detail Dataset -->
-        <section class="dataset-detail">
-            <h1>Kidney Stone (CT Scan) Dataset (v1)</h1>
-            <p>Dataset ini berisi kumpulan gambar CT Scan untuk deteksi batu ginjal. Sangat berguna untuk melatih model klasifikasi atau segmentasi dalam pencitraan medis.</p>
-            
-            <div class="tags">
-                <span>Citra Medis</span>
-                <span>CT Scan</span>
-                <span>Batu Ginjal</span>
-                <span>Urologi</span>
+    <div class="page-wrapper">
+        <!-- ===== Sidebar ===== -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <button class="toggle-btn" id="toggle-btn"><i class="fas fa-bars"></i></button>
+                <a href="index.html" class="logo">Paijo Willbig</a>
             </div>
-            
-            <!-- Tombol Download Utama - Link sudah diperbaiki -->
-            <a href="https://raw.githack.com/paijolemu/dataset-medic.willbig/main/datasets/batu-ginjal-ct-v1/data%20batu%20ginjal.zip" class="btn">Download Full Dataset (.zip)</a>
-        </section>
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-link"><i class="fas fa-home"></i><span class="link-text">Beranda</span></a>
+                <a href="datasets.html" class="nav-link active"><i class="fas fa-database"></i><span class="link-text">Datasets</span></a>
+                <a href="about.html" class="nav-link"><i class="fas fa-users"></i><span class="link-text">Tentang Kami</span></a>
+            </nav>
+        </aside>
 
-        <!-- Bagian Preview Gambar -->
-        <section class="image-preview">
-            <h2>Preview Gambar</h2>
-            <div class="preview-grid">
-                <!-- Gambar-gambar dengan perlindungan klik kanan - Link sudah diperbaiki -->
-                <img src="https://github.com/paijolemu/dataset-medic.willbig/blob/main/datasets/batu-ginjal-ct-v1/1-3-46-670589-33-1-63700700749865510700001-5062181202000819812_png_jpg.rf.74493ef7bdab6de49e88f708a5745000.jpg?raw=true" alt="Preview CT Scan 1" oncontextmenu="return false;">
-                <img src="https://github.com/paijolemu/dataset-medic.willbig/blob/main/datasets/batu-ginjal-ct-v1/1-3-46-670589-33-1-63703718086101119100001-4867318355234768205_png_jpg.rf.1dfac1d9cec1e41063522ec6af125f27.jpg?raw=true" alt="Preview CT Scan 2" oncontextmenu="return false;">
-                <img src="https://github.com/paijolemu/dataset-medic.willbig/blob/main/datasets/batu-ginjal-ct-v1/1-3-46-670589-33-1-63703718086140121300001-4751980723480797909_png_jpg.rf.4613088faec825a93a3e03e97ce46323.jpg?raw=true" alt="Preview CT Scan 3" oncontextmenu="return false;">
-                <img src="https://github.com/paijolemu/dataset-medic.willbig/blob/main/datasets/batu-ginjal-ct-v1/1-3-46-670589-33-1-63703718086162122600001-5663486194805675763_png_jpg.rf.0e4908bfa2159adcf7d8c79960897464.jpg?raw=true" alt="Preview CT Scan 4" oncontextmenu="return false;">
-                <img src="https://github.com/paijolemu/dataset-medic.willbig/blob/main/datasets/batu-ginjal-ct-v1/1-3-46-670589-33-1-63703718086162122600001-5663486194805675763_png_jpg.rf.a4a19de71b774b45786c63f55a9a9016.jpg?raw=true" alt="Preview CT Scan 5" oncontextmenu="return false;">
-            </div>
-        </section>
-    </main>
+        <!-- ===== Konten Utama Halaman ===== -->
+        <main class="main-content">
+            <!-- Bagian Detail Dataset -->
+            <section class="dataset-detail">
+                <h1>Kidney Stone (CT Scan) Dataset (v1)</h1>
+                <p>Dataset ini berisi kumpulan gambar CT Scan untuk deteksi batu ginjal. Sangat berguna untuk melatih model klasifikasi atau segmentasi dalam pencitraan medis.</p>
+                <div class="tags">
+                    <span>Citra Medis</span>
+                    <span>CT Scan</span>
+                    <span>Batu Ginjal</span>
+                    <span>Urologi</span>
+                </div>
+                <!-- Tombol Download Utama -->
+                <a href="https://raw.githack.com/paijolemu/dataset-medic.willbig/main/datasets/batu-ginjal-ct-v1/data%20batu%20ginjal.zip" class="btn">Download Full Dataset (.zip)</a>
+            </section>
 
-    <footer>
-        <p>© 2025 Proyek Dataset Medis. Dibuat dengan semangat oleh Paijo.</p>
-    </footer>
+            <!-- Bagian Preview Gambar -->
+            <section class="image-preview">
+                <h2>Preview Gambar</h2>
+                <div class="preview-grid">
+                    <!-- Link gambar-gambar Anda di sini -->
+                    <img src="https://github.com/paijolemu/dataset-medic.willbig/blob/main/datasets/batu-ginjal-ct-v1/1-3-46-670589-33-1-63700700749865510700001-5062181202000819812_png_jpg.rf.269520bcaab75e008e00f57f3fa98851.jpg?raw=true" alt="Preview CT Scan 1" oncontextmenu="return false;">
+                    <!-- Tambahkan link gambar lainnya di sini -->
+                </div>
+            </section>
+        </main>
+    </div>
+    <!-- Script untuk fungsi sidebar -->
+    <script src="js/main.js"></script>
 </body>
 </html>
