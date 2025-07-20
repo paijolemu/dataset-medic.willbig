@@ -7,64 +7,63 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="index.html" class="logo">Paijo Willbig</a>
-            <ul>
-                <li><a href="index.html">Beranda</a></li>
-                <li><a href="datasets.html">Datasets</a></li>
-                <li><a href="#">Tentang Kami</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main class="container">
-        <h1>Koleksi Dataset Kami</h1>
-        <p>Pilih dataset yang Anda butuhkan untuk proyek riset atau pengembangan AI Anda.</p>
-
-        <div class="dataset-list">
-
-            <!-- Kartu Dataset Pneumonia -->
-            <div class="dataset-card">
-                <h2>Pneumonia Image Dataset (v1)</h2>
-                <p>Kumpulan 6 gambar X-Ray dada untuk pengujian awal deteksi pneumonia.</p>
-                <div class="tags">
-                    <span>Citra Medis</span>
-                    <span>X-Ray</span>
-                    <span>Pneumonia</span>
-                </div>
-                <a href="pneumonia-details.html" class="btn-card">Lihat Detail & Gambar</a>
+    <div class="page-wrapper">
+        <!-- ===== Sidebar akan masuk di sini ===== -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="logo">Paijo Willbig</a>
             </div>
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-link">🏠 Beranda</a>
+                <a href="datasets.html" class="nav-link active">📊 Datasets</a>
+                <a href="about.html" class="nav-link">👥 Tentang Kami</a>
+            </nav>
+        </aside>
 
-            <!-- Kartu Dataset Batu Ginjal -->
-            <div class="dataset-card">
-                <h2>Kidney Stone (CT Scan) Dataset</h2>
-                <p>Kumpulan gambar dari CT Scan untuk identifikasi dan analisis batu ginjal. Sangat berguna untuk melatih model klasifikasi atau segmentasi.</p>
-                <div class="tags">
-                    <span>Citra Medis</span>
-                    <span>CT Scan</span>
-                    <span>Batu Ginjal</span>
+        <!-- ===== Konten Utama Halaman ===== -->
+        <main class="main-content">
+            <header class="content-header">
+                <h1>Koleksi Dataset Kami</h1>
+                <p>Pilih dataset yang Anda butuhkan untuk proyek riset atau pengembangan AI Anda.</p>
+            </header>
+
+            <div class="dataset-list">
+                <!-- Kartu-kartu dataset Anda akan masuk di sini -->
+                <!-- Kartu Dataset Pneumonia -->
+                <div class="dataset-card">
+                    <h2>Pneumonia Image Dataset (v1)</h2>
+                    <p>Kumpulan 6 gambar X-Ray dada untuk pengujian awal deteksi pneumonia.</p>
+                    <div class="tags">
+                        <span>Citra Medis</span>
+                        <span>X-Ray</span>
+                        <span>Pneumonia</span>
+                    </div>
+                    <a href="pneumonia-details.html" class="btn-card">Lihat Detail & Gambar</a>
                 </div>
-                <a href="batu-ginjal-details.html" class="btn-card">Lihat Detail & Gambar</a>
-            </div>
-
-            <!-- Kartu untuk Dataset Premium -->
-            <div class="dataset-card">
-                <h2>[PREMIUM] EEG Brain Signal</h2>
-                <p>Dataset eksklusif berisi sinyal EEG mentah untuk analisis aktivitas otak. Akses terbatas.</p>
-                <div class="tags">
-                    <span>Sinyal Medis</span>
-                    <span>EEG</span>
-                    <span>Premium</span>
+                <!-- Kartu Dataset Batu Ginjal -->
+                <div class="dataset-card">
+                    <h2>Kidney Stone (CT Scan) Dataset</h2>
+                    <p>Kumpulan gambar dari CT Scan untuk identifikasi dan analisis batu ginjal.</p>
+                    <div class="tags">
+                        <span>Citra Medis</span>
+                        <span>CT Scan</span>
+                        <span>Batu Ginjal</span>
+                    </div>
+                    <a href="batu-ginjal-details.html" class="btn-card">Lihat Detail & Gambar</a>
                 </div>
-                <a href="login.html" class="btn-card">Dapatkan Akses</a>
+                <!-- Kartu untuk Dataset Premium -->
+                <div class="dataset-card">
+                    <h2>[PREMIUM] EEG Brain Signal</h2>
+                    <p>Dataset eksklusif berisi sinyal EEG mentah untuk analisis aktivitas otak. Akses terbatas.</p>
+                    <div class="tags">
+                        <span>Sinyal Medis</span>
+                        <span>EEG</span>
+                        <span>Premium</span>
+                    </div>
+                    <a href="login.html" class="btn-card">Dapatkan Akses</a>
+                </div>
             </div>
-
-        </div> <!-- Penutup .dataset-list -->
-    </main>
-
-    <footer>
-        <p>© 2025 Proyek Dataset Medis. Dibuat dengan semangat oleh Paijo.</p>
-    </footer>
+        </main>
+    </div>
 </body>
 </html>
