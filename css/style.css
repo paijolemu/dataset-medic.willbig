@@ -105,3 +105,61 @@ footer { text-align: center; margin-top: 5rem; padding: 3rem; background-color: 
 .image-preview { margin-top: 3rem; }
 .preview-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem;}
 .preview-grid img { width: 100%; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+
+/* === Gaya Khusus untuk Halaman Login (TERPUSAT) === */
+
+.login-container {
+    max-width: 400px;
+    margin: 3rem auto;
+    padding: 2.5rem;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(44, 62, 80, 0.1);
+    text-align: center;
+}
+
+.login-container h2 {
+    color: #2c3e50;
+    margin-top: 0;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 1.5rem;
+    border: none;
+    border-radius: 50px;
+    background-color: #3498db;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-container button:hover {
+    background-color: #2980b9;
+}
+
+.login-container input[type="password"], 
+.login-container input[type="text"] {
+    width: 100%;
+    padding: 0.8rem 40px 0.8rem 1rem;
+    margin-top: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.password-wrapper i {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #aaa;
+}
