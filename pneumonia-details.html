@@ -4,55 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detail Dataset Pneumonia - Paijo Willbig</title>
+    <!-- Font Awesome untuk Ikon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="index.html" class="logo">Paijo Willbig</a>
-            <ul>
-                <li><a href="index.html">Beranda</a></li>
-                <li><a href="datasets.html">Datasets</a></li>
-                <li><a href="#">Tentang Kami</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main class="container">
-        <!-- Bagian Detail Dataset -->
-        <section class="dataset-detail">
-            <h1>Pneumonia Image Dataset (v1)</h1>
-            <p>Ini adalah dataset awal kami untuk deteksi pneumonia, berisi 6 gambar X-Ray dada. Dataset ini sangat cocok untuk pengujian model awal atau untuk tujuan edukasi. Gambar telah dianonimkan dan siap digunakan.</p>
-            
-            <div class="tags">
-                <span>Citra Medis</span>
-                <span>X-Ray</span>
-                <span>Pneumonia</span>
-                <span>Test Data</span>
+    <div class="page-wrapper">
+        <!-- ===== Sidebar ===== -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <button class="toggle-btn" id="toggle-btn"><i class="fas fa-bars"></i></button>
+                <a href="index.html" class="logo">Paijo Willbig</a>
             </div>
-            
-            <!-- Tombol Download Utama -->
-            <a href="https://github.com/paijolemu/dataset-medic.willbig/raw/refs/heads/main/datasets/pneumonia-testing-versi1/testing.zip" class="btn">Download Full Dataset (.zip)</a>
-        </section>
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-link"><i class="fas fa-home"></i><span class="link-text">Beranda</span></a>
+                <a href="datasets.html" class="nav-link active"><i class="fas fa-database"></i><span class="link-text">Datasets</span></a>
+                <a href="about.html" class="nav-link"><i class="fas fa-users"></i><span class="link-text">Tentang Kami</span></a>
+            </nav>
+        </aside>
 
-        <!-- Bagian Preview Gambar -->
-        <section class="image-preview">
-            <h2>Preview Gambar</h2>
-            <div class="preview-grid">
-                <!-- Gambar-gambar dengan perlindungan klik kanan -->
-                <img src="https://github.com/paijolemu/dataset-medic.willbig/blob/main/datasets/pneumonia-testing-versi1/person100_bacteria_481.jpg?raw=true" alt="Preview Gambar 1" oncontextmenu="return false;">
-                <img src="https://github.com/paijolemu/dataset-medic.willbig/blob/main/datasets/pneumonia-testing-versi1/person100_bacteria_480.jpg?raw=true" alt="Preview Gambar 2" oncontextmenu="return false;">
-                <img src="https://github.com/paijolemu/dataset-medic.willbig/blob/main/datasets/pneumonia-testing-versi1/person100_bacteria_479.jpg?raw=true" alt="Preview Gambar 3" oncontextmenu="return false;">
-                <img src="https://github.com/paijolemu/dataset-medic.willbig/blob/main/datasets/pneumonia-testing-versi1/person100_bacteria_477.jpg?raw=true" alt="Preview Gambar 4" oncontextmenu="return false;">
-                <img src="https://github.com/paijolemu/dataset-medic.willbig/blob/main/datasets/pneumonia-testing-versi1/person100_bacteria_475.jpg?raw=true" alt="Preview Gambar 5" oncontextmenu="return false;">
-                <img src="https://github.com/paijolemu/dataset-medic.willbig/blob/main/datasets/pneumonia-testing-versi1/person100_bacteria_478.jpg?raw=true" alt="Preview Gambar 6" oncontextmenu="return false;">
-            </div>
-        </section>
-    </main>
+        <!-- ===== Konten Utama Halaman ===== -->
+        <main class="main-content">
+            <!-- Bagian Detail Dataset -->
+            <section class="dataset-detail">
+                <h1>Pneumonia Image Dataset (v1)</h1>
+                <p>Ini adalah dataset awal kami untuk deteksi pneumonia, berisi 6 gambar X-Ray dada. Dataset ini sangat cocok untuk pengujian model awal atau untuk tujuan edukasi. Gambar telah dianonimkan dan siap digunakan.</p>
+                <div class="tags">
+                    <span>Citra Medis</span>
+                    <span>X-Ray</span>
+                    <span>Pneumonia</span>
+                    <span>Test Data</span>
+                </div>
+                <!-- Tombol Download (menggunakan class .btn dari CSS utama) -->
+                <a href="https://raw.githack.com/paijolemu/dataset-medic.willbig/main/datasets/pneumonia-testing-versi1/testing.zip" class="btn">Download Full Dataset (.zip)</a>
+            </section>
 
-    <footer>
-        <p>© 2024 Proyek Dataset Medis. Dibuat dengan semangat oleh Paijo.</p>
-    </footer>
+            <!-- Bagian Preview Gambar -->
+            <section class="image-preview">
+                <h2>Preview Gambar</h2>
+                <div class="preview-grid">
+                    <img src="https://github.com/paijolemu/dataset-medic.willbig/blob/main/datasets/pneumonia-testing-versi1/person100_bacteria_481.jpg?raw=true" alt="Preview Gambar 1" oncontextmenu="return false;">
+                    <img src="https://github.com/paijolemu/dataset-medic.willbig/blob/main/datasets/pneumonia-testing-versi1/person100_bacteria_480.jpg?raw=true" alt="Preview Gambar 2" oncontextmenu="return false;">
+                    <img src="https://github.com/paijolemu/dataset-medic.willbig/blob/main/datasets/pneumonia-testing-versi1/person100_bacteria_479.jpg?raw=true" alt="Preview Gambar 3" oncontextmenu="return false;">
+                    <img src="https://github.com/paijolemu/dataset-medic.willbig/blob/main/datasets/pneumonia-testing-versi1/person100_bacteria_477.jpg?raw=true" alt="Preview Gambar 4" oncontextmenu="return false;">
+                    <img src="https://github.com/paijolemu/dataset-medic.willbig/blob/main/datasets/pneumonia-testing-versi1/person100_bacteria_475.jpg?raw=true" alt="Preview Gambar 5" oncontextmenu="return false;">
+                    <img src="https://github.com/paijolemu/dataset-medic.willbig/blob/main/datasets/pneumonia-testing-versi1/person100_bacteria_478.jpg?raw=true" alt="Preview Gambar 6" oncontextmenu="return false;">
+                </div>
+            </section>
+        </main>
+    </div>
+    <!-- Script untuk fungsi sidebar -->
+    <script src="js/main.js"></script>
 </body>
 </html>
