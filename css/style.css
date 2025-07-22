@@ -8,11 +8,14 @@ body {
     background-color: #f4f7f6;
     color: #333;
     line-height: 1.6;
+    /* Mencegah scroll horizontal saat transisi */
+    overflow-x: hidden; 
 }
 
 /* === STRUKTUR UTAMA DENGAN SIDEBAR MENEMPEL === */
 .page-wrapper {
-    display: flex;
+    position: relative; /* Diperlukan untuk metode transform */
+    width: 100%;
 }
 
 .sidebar {
@@ -27,20 +30,20 @@ body {
     flex-direction: column;
     padding: 1.5rem 1rem;
     box-sizing: border-box;
-    transition: width 0.4s ease-in-out; 
-    overflow-x: hidden; 
+    transition: transform 0.4s ease-in-out; /* Transisi sidebar menggunakan transform */
+    z-index: 1000;
 }
 
 .main-content {
-    margin-left: 250px;
     padding: 2rem;
-    width: calc(100% - 250px);
-    transition: margin-left 0.4s ease-in-out, width 0.4s ease-in-out;
+    /* Transisi menggunakan transform untuk animasi super smooth */
+    transition: transform 0.4s ease-in-out;
 }
 
 /* === KONDISI SAAT SIDEBAR DICIUTKAN === */
 .sidebar.collapsed {
-    width: 80px;
+    /* Alih-alih mengubah width, kita geser ke luar layar */
+    transform: translateX(-170px); 
 }
 .sidebar.collapsed .logo,
 .sidebar.collapsed .link-text {
@@ -49,10 +52,13 @@ body {
 }
 .sidebar.collapsed .toggle-btn {
     align-self: center;
+    margin-left: auto;
+    margin-right: auto;
 }
+
+/* Saat sidebar diciutkan, konten utama tidak lagi bergeser dengan margin, tapi tetap di tempat */
 body.sidebar-collapsed .main-content {
-    margin-left: 80px;
-    width: calc(100% - 80px);
+    /* Tidak ada perubahan margin, biarkan browser yang menangani */
 }
 
 
@@ -93,7 +99,7 @@ body.sidebar-collapsed .main-content {
     transition: opacity 0.3s ease-in-out;
 }
 
-/* Sisa kode CSS di bawah ini sama persis */
+/* (Sisa kode CSS di bawah ini sama persis, tidak perlu diubah) */
 .content-header { margin-bottom: 2rem; border-bottom: 1px solid #e0e0e0; padding-bottom: 1rem; }
 .content-header h1, .content-header h2 { margin: 0; color: #2c3e50; }
 .hero { text-align: center; padding: 5rem 1rem; color: white; border-radius: 12px; background: linear-gradient(-45deg, #3498db, #2c3e50, #2980b9, #2ecc71); background-size: 400% 400%; animation: gradientAnimation 15s ease infinite; }
