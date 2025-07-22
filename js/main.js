@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Fungsi untuk mengubah status sidebar
     function toggleSidebar() {
         sidebar.classList.toggle('collapsed');
-        body.classList.toggle('sidebar-collapsed');
+        body.classList.toggle('sidebar-collapsed'); // Ini penting untuk konten utama
     }
 
     // Tambahkan event listener ke tombol
