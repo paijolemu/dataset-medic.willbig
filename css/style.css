@@ -10,10 +10,9 @@ body {
     line-height: 1.6;
 }
 
-/* === STRUKTUR UTAMA DENGAN OVERLAY SIDEBAR === */
+/* === STRUKTUR UTAMA DENGAN SIDEBAR MENEMPEL === */
 .page-wrapper {
-    /* Konten utama sekarang mengisi seluruh ruang di belakang sidebar */
-    padding-left: 80px; /* Memberi ruang tetap untuk sidebar yang diciutkan */
+    display: flex;
 }
 
 .sidebar {
@@ -28,22 +27,21 @@ body {
     flex-direction: column;
     padding: 1.5rem 1rem;
     box-sizing: border-box;
-    /* KUNCI UTAMA: Animasi menggunakan transform untuk performa maksimal */
-    transform: translateX(0);
-    transition: transform 0.4s ease-in-out; 
-    z-index: 1001; /* Pastikan sidebar selalu di atas */
-    overflow-x: hidden;
+    transition: width 0.4s ease-in-out; 
+    overflow-x: hidden; 
+    z-index: 1000;
 }
 
 .main-content {
+    margin-left: 250px;
     padding: 2rem;
-    /* Konten utama tidak lagi memiliki transisi atau margin yang berubah */
+    width: calc(100% - 250px);
+    transition: margin-left 0.4s ease-in-out, width 0.4s ease-in-out;
 }
 
-/* === KONDISI SAAT SIDEBAR DICIUTKAN (STATE DEFAULT) === */
+/* === KONDISI SAAT SIDEBAR DICIUTKAN === */
 .sidebar.collapsed {
-    /* Geser sidebar ke kiri, sisakan 80px */
-    transform: translateX(-170px); /* 250px (lebar total) - 80px (lebar ciut) = 170px */
+    width: 80px;
 }
 .sidebar.collapsed .logo,
 .sidebar.collapsed .link-text {
@@ -52,24 +50,51 @@ body {
 }
 .sidebar.collapsed .toggle-btn {
     align-self: center;
-    margin-left: auto;
-    margin-right: auto;
+}
+body.sidebar-collapsed .main-content {
+    margin-left: 80px;
+    width: calc(100% - 80px);
 }
 
 
 /* === Komponen di Dalam Sidebar === */
-.sidebar-header { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem; }
-.logo { font-weight: 700; font-size: 1.5rem; color: #2c3e50; text-decoration: none; white-space: nowrap; transition: opacity 0.3s ease-in-out; }
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+.logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #2c3e50;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: opacity 0.3s ease-in-out;
+}
 .toggle-btn { background: none; border: none; cursor: pointer; font-size: 1.2rem; color: #555; }
 .sidebar-nav { display: flex; flex-direction: column; gap: 0.8rem; }
-.nav-link { display: flex; align-items: center; gap: 1rem; text-decoration: none; color: #555; font-weight: 500; padding: 0.7rem 1rem; border-radius: 8px; transition: background-color 0.2s ease, color 0.2s ease; white-space: nowrap; font-size: 0.9rem; }
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    padding: 0.7rem 1rem;
+    border-radius: 8px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
+    font-size: 0.9rem;
+}
 .nav-link i { font-size: 1.1rem; width: 20px; text-align: center; }
 .nav-link:hover { background-color: #f0f2f5; color: #2c3e50; }
 .nav-link.active { background-color: #3498db; color: white; }
-.link-text { transition: opacity 0.3s ease-in-out; }
+.link-text {
+    transition: opacity 0.3s ease-in-out;
+}
 
-
-/* (Sisa kode CSS di bawah ini sama persis, tidak ada perubahan) */
+/* Sisa kode CSS di bawah ini tidak perlu diubah */
 .content-header { margin-bottom: 2rem; border-bottom: 1px solid #e0e0e0; padding-bottom: 1rem; }
 .content-header h1, .content-header h2 { margin: 0; color: #2c3e50; }
 .hero { text-align: center; padding: 5rem 1rem; color: white; border-radius: 12px; background: linear-gradient(-45deg, #3498db, #2c3e50, #2980b9, #2ecc71); background-size: 400% 400%; animation: gradientAnimation 15s ease infinite; }
