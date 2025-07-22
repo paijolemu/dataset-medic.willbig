@@ -16,38 +16,25 @@
                 <a href="index.html" class="logo">Paijo Willbig</a>
             </div>
             <nav class="sidebar-nav">
-                <a href="index.html" class="nav-link active">
-                    <i class="fas fa-home"></i><span class="link-text">Beranda</span>
-                </a>
-                <a href="datasets.html" class="nav-link">
-                    <i class="fas fa-database"></i><span class="link-text">Datasets</span>
-                </a>
-                <a href="about.html" class="nav-link">
-                    <i class="fas fa-users"></i><span class="link-text">Tentang Kami</span>
-                </a>
+                <a href="index.html" class="nav-link active"><i class="fas fa-home"></i><span class="link-text">Beranda</span></a>
+                <a href="datasets.html" class="nav-link"><i class="fas fa-database"></i><span class="link-text">Datasets</span></a>
+                <a href="about.html" class="nav-link"><i class="fas fa-users"></i><span class="link-text">Tentang Kami</span></a>
             </nav>
         </aside>
-
         <!-- Konten Utama Halaman -->
         <main class="main-content">
             <header class="content-header">
                 <h2>Selamat Datang!</h2>
             </header>
-
-            <!-- Bagian Hero tetap full-width -->
             <section class="hero">
-                <h1>Platform Dataset Medis Terbuka</h1>
+                <h1><span id="typed-text"></span></h1>
                 <p>Menyediakan dataset medis berkualitas tinggi dan terkurasi untuk mendorong inovasi dan penelitian di bidang kesehatan.</p>
                 <a href="datasets.html" class="btn">Jelajahi Semua Dataset</a>
             </section>
-
-            <!-- ===== "BOTOL" PEMBUNGKUS KONTEN DIMULAI DI SINI ===== -->
             <div class="container">
-                <!-- Bagian Dataset Unggulan -->
                 <section class="featured-section">
                     <h2 class="section-title">Dataset Unggulan</h2>
                     <div class="dataset-list">
-                        <!-- Kartu-kartu dataset -->
                         <div class="dataset-card">
                             <h2>Pneumonia Image (v1)</h2>
                             <p>Kumpulan gambar X-Ray dada untuk pengujian awal deteksi pneumonia.</p>
@@ -65,31 +52,33 @@
                         </div>
                     </div>
                 </section>
-
-                <!-- Bagian Keunggulan Platform -->
                 <section class="features-section">
                     <h2 class="section-title">Mengapa Memilih Platform Kami?</h2>
                     <div class="features-grid">
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i><h3>Data Terkurasi</h3>
-                            <p>Setiap dataset telah diseleksi dan dipersiapkan untuk memastikan kualitasnya.</p>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-unlock-alt"></i><h3>Akses Terbuka</h3>
-                            <p>Kami berkomitmen untuk menyediakan data yang dapat diakses secara bebas untuk riset.</p>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-rocket"></i><h3>Mendorong Inovasi</h3>
-                            <p>Data kami dirancang untuk membantu Anda membangun model AI canggih di bidang kesehatan.</p>
-                        </div>
+                        <div class="feature-item"><i class="fas fa-check-circle"></i><h3>Data Terkurasi</h3><p>Setiap dataset telah diseleksi dan dipersiapkan untuk memastikan kualitasnya.</p></div>
+                        <div class="feature-item"><i class="fas fa-unlock-alt"></i><h3>Akses Terbuka</h3><p>Kami berkomitmen untuk menyediakan data yang dapat diakses secara bebas untuk riset.</p></div>
+                        <div class="feature-item"><i class="fas fa-rocket"></i><h3>Mendorong Inovasi</h3><p>Data kami dirancang untuk membantu Anda membangun model AI canggih di bidang kesehatan.</p></div>
                     </div>
                 </section>
-            </div> <!-- ===== AKHIR DARI "BOTOL" PEMBUNGKUS ===== -->
-
+            </div>
         </main>
     </div>
-    <!-- Library untuk efek ketik -->
+
+    <!-- Library untuk efek ketik (HARUS DI ATAS SCRIPT LAINNYA) -->
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <!-- Script untuk mengaktifkan efek ketik -->
+    <script>
+        var typed = new Typed('#typed-text', {
+            strings: ["Platform Dataset Medis", "Akses Data untuk Riset", "Inovasi untuk Kesehatan"],
+            typeSpeed: 50,
+            backSpeed: 25,
+            backDelay: 2000,
+            startDelay: 500,
+            loop: true,
+            smartBackspace: true
+        });
+    </script>
+    <!-- Script untuk fungsi sidebar -->
     <script src="js/main.js"></script>
 </body>
 </html>
