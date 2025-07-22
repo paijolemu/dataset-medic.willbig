@@ -12,6 +12,11 @@ body {
     overflow-x: hidden;
 }
 
+.container {
+    max-width: 1200px; /* Lebar maksimal konten kita */
+    margin: 0 auto; /* Trik untuk membuat kontainer berada di tengah */
+    padding: 0 1.5rem; /* Memberi sedikit ruang di sisi kiri/kanan pada layar kecil */
+}
 /* === STRUKTUR UTAMA DENGAN PERGESERAN TRANSFORM === */
 .page-wrapper {
     display: flex;
