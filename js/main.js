@@ -6,16 +6,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Fungsi untuk mengubah status sidebar
     function toggleSidebar() {
         sidebar.classList.toggle('collapsed');
-        body.classList.toggle('overlay-active'); // Tambah/hapus class di body
+        body.classList.toggle('sidebar-collapsed');
     }
 
     // Tambahkan event listener ke tombol
     if (toggleBtn) {
         toggleBtn.addEventListener('click', toggleSidebar);
-    }
-    
-    // Mulai dengan sidebar dalam keadaan diciutkan
-    if (sidebar) {
-        sidebar.classList.add('collapsed');
     }
 });
