@@ -59,26 +59,29 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const galleryContainer = document.getElementById('gallery-container');
-            const dataset = allDatasets.kidneyStone; // Mengambil data Batu Ginjal
+            // Pastikan kita mengambil data Batu Ginjal
+            if (window.allDatasets && allDatasets.kidneyStone) {
+                const dataset = allDatasets.kidneyStone;
 
-            // Loop untuk setiap nama file gambar dan buat elemen <img>
-            dataset.images.forEach((imageName, index) => {
-                const fullUrl = `${dataset.basePath}${imageName}?raw=true`;
-                const imgElement = document.createElement('img');
-                imgElement.src = fullUrl;
-                imgElement.alt = `Preview CT Scan ${index + 1}`;
-                imgElement.className = 'lightbox-image';
-                imgElement.setAttribute('oncontextmenu', 'return false;');
-                galleryContainer.appendChild(imgElement);
-            });
-
-            // Aktifkan kembali lightbox untuk gambar yang baru dibuat
-            document.querySelectorAll('.lightbox-image').forEach(item => {
-                item.addEventListener('click', event => {
-                    event.preventDefault();
-                    basicLightbox.create(`<img src="${event.target.src}">`).show();
+                dataset.images.forEach((imageName, index) => {
+                    const fullUrl = `${dataset.basePath}${imageName}?raw=true`;
+                    const imgElement = document.createElement('img');
+                    imgElement.src = fullUrl;
+                    imgElement.alt = `Preview CT Scan ${index + 1}`;
+                    imgElement.className = 'lightbox-image';
+                    imgElement.setAttribute('oncontextmenu', 'return false;');
+                    galleryContainer.appendChild(imgElement);
                 });
-            });
+
+                document.querySelectorAll('.lightbox-image').forEach(item => {
+                    item.addEventListener('click', event => {
+                        event.preventDefault();
+                        basicLightbox.create(`<img src="${event.target.src}">`).show();
+                    });
+                });
+            } else {
+                galleryContainer.innerHTML = '<p>Gagal memuat data gambar. Silakan periksa file datasets.js.</p>';
+            }
         });
     </script>
 </body>
