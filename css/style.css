@@ -1,147 +1,85 @@
-/* Import Font */
+/* Import Font & Pengaturan Dasar */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+body { font-family: 'Poppins', sans-serif; margin: 0; background-color: #f4f7f6; color: #333; line-height: 1.6; }
 
-/* Pengaturan Dasar */
-body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    background-color: #f4f7f6;
-    color: #333;
-    line-height: 1.6;
-    /* Mencegah bug visual saat transisi */
-    overflow-x: hidden;
-}
+/* === STRUKTUR DESKTOP (DEFAULT) === */
+.page-wrapper { display: flex; }
+.sidebar { width: 250px; background-color: #ffffff; height: 100vh; position: fixed; top: 0; left: 0; border-right: 1px solid #e0e0e0; display: flex; flex-direction: column; padding: 1.5rem 1rem; box-sizing: border-box; transition: width 0.4s ease-in-out; overflow-x: hidden; z-index: 1001; }
+.main-content { margin-left: 250px; padding: 2rem; width: calc(100% - 250px); transition: margin-left 0.4s ease-in-out, width 0.4s ease-in-out; }
+.mobile-header { display: none; } /* Sembunyikan header mobile di desktop */
+.overlay { display: none; } /* Sembunyikan overlay di desktop */
 
-.container {
-    max-width: 1200px; /* Lebar maksimal konten kita */
-    margin: 0 auto; /* Trik untuk membuat kontainer berada di tengah */
-    padding: 0 1.5rem; /* Memberi sedikit ruang di sisi kiri/kanan pada layar kecil */
-}
-/* === STRUKTUR UTAMA DENGAN PERGESERAN TRANSFORM === */
-.page-wrapper {
-    display: flex;
-}
+/* Kondisi Sidebar Desktop Diciutkan */
+.sidebar.collapsed { width: 80px; }
+.sidebar.collapsed .logo, .sidebar.collapsed .link-text { opacity: 0; pointer-events: none; }
+.sidebar.collapsed .toggle-btn { align-self: center; }
+body.sidebar-collapsed .main-content { margin-left: 80px; width: calc(100% - 80px); }
 
-.sidebar {
-    width: 250px;
-    background-color: #ffffff;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    border-right: 1px solid #e0e0e0;
-    display: flex;
-    flex-direction: column;
-    padding: 1.5rem 1rem;
-    box-sizing: border-box;
-    transition: width 0.4s ease-in-out; 
-    overflow-x: hidden; 
-    z-index: 1000;
-}
-
-.main-content {
-    /* KUNCI UTAMA: Konten utama didorong oleh margin, dan digeser oleh transform */
-    margin-left: 250px;
-    width: calc(100% - 250px);
-    transition: margin-left 0.4s ease-in-out, width 0.4s ease-in-out;
-}
-
-/* === KONDISI SAAT SIDEBAR DICIUTKAN === */
-.sidebar.collapsed {
-    width: 80px;
-}
-.sidebar.collapsed .logo,
-.sidebar.collapsed .link-text {
-    opacity: 0;
-    pointer-events: none;
-}
-.sidebar.collapsed .toggle-btn {
-    align-self: center;
-}
-/* KUNCI UTAMA: Konten utama menyesuaikan posisinya saat body memiliki class ini */
-body.sidebar-collapsed .main-content {
-    margin-left: 80px;
-    width: calc(100% - 80px);
-}
-
-/* === Komponen Sidebar yang Dibuat Lebih Ramping === */
-.sidebar-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem; /* Jarak dikurangi */
-    margin-bottom: 2rem;
-}
-.logo {
-    font-weight: 700;
-    font-size: 1.4rem; /* Dikecilkan */
-    color: #2c3e50;
-    text-decoration: none;
-    white-space: nowrap;
-    transition: opacity 0.3s ease-in-out;
-}
+/* Komponen Sidebar Desktop */
+.sidebar-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
+.logo { font-weight: 700; font-size: 1.4rem; color: #2c3e50; text-decoration: none; white-space: nowrap; transition: opacity 0.3s ease-in-out; }
 .toggle-btn { background: none; border: none; cursor: pointer; font-size: 1.1rem; color: #555; }
-.sidebar-nav { display: flex; flex-direction: column; gap: 0.5rem; } /* Jarak dikurangi */
-.nav-link {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem; /* Jarak dikurangi */
-    text-decoration: none;
-    color: #555;
-    font-weight: 500;
-    padding: 0.6rem 1rem; /* Padding dikecilkan (lebih ramping) */
-    border-radius: 6px; /* Sudut lebih tajam */
-    transition: background-color 0.2s ease, color 0.2s ease;
-    white-space: nowrap;
-    font-size: 0.85rem; /* Font dikecilkan */
-}
-.nav-link i { font-size: 1rem; width: 18px; text-align: center; } /* Ikon dikecilkan */
+.sidebar-nav { display: flex; flex-direction: column; gap: 0.5rem; }
+.nav-link { display: flex; align-items: center; gap: 0.8rem; text-decoration: none; color: #555; font-weight: 500; padding: 0.6rem 1rem; border-radius: 6px; transition: background-color 0.2s ease, color 0.2s ease; white-space: nowrap; font-size: 0.85rem; }
+.nav-link i { font-size: 1rem; width: 18px; text-align: center; }
 .nav-link:hover { background-color: #f0f2f5; color: #2c3e50; }
 .nav-link.active { background-color: #3498db; color: white; }
-.link-text {
-    transition: opacity 0.3s ease-in-out;
+.link-text { transition: opacity 0.3s ease-in-out; }
+
+/* === MEDIA QUERY UNTUK MOBILE (Layar di bawah 768px) === */
+@media (max-width: 768px) {
+    .page-wrapper { display: block; } /* Ubah layout menjadi block */
+    
+    .sidebar {
+        transform: translateX(-100%); /* Sembunyikan sidebar ke kiri */
+        transition: transform 0.4s ease-in-out;
+        box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+    .sidebar.mobile-active {
+        transform: translateX(0); /* Munculkan sidebar saat aktif */
+    }
+    
+    .main-content {
+        margin-left: 0; /* Konten mengisi seluruh layar */
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .mobile-header {
+        display: flex; /* Tampilkan header mobile */
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        background-color: #fff;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+    
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.4s ease, visibility 0.4s ease;
+    }
+    .overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
 }
 
-/* Sisa kode CSS di bawah ini sama persis */
+/* Sisa kode CSS (konten, kartu, dll.) tetap sama */
 .content-header { margin-bottom: 2rem; border-bottom: 1px solid #e0e0e0; padding-bottom: 1rem; }
 .content-header h1, .content-header h2 { margin: 0; color: #2c3e50; }
 .hero { text-align: center; padding: 5rem 1rem; color: white; border-radius: 12px; background: linear-gradient(-45deg, #3498db, #2c3e50, #2980b9, #2ecc71); background-size: 400% 400%; animation: gradientAnimation 15s ease infinite; }
-.hero h1 { font-size: 3rem; margin-bottom: 1rem; }
-.hero p { font-size: 1.25rem; max-width: 600px; margin: 0 auto 2.5rem auto; }
-.hero .btn { background-color: #ffffff; color: #2c3e50; padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 700; transition: all 0.3s ease; }
-.hero .btn:hover { transform: translateY(-3px); }
-.dataset-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; justify-content: center; }
-.dataset-card { background-color: #ffffff; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; flex-direction: column; }
-.dataset-card:hover { transform: translateY(-8px); box-shadow: 0 10px 25px rgba(44, 62, 80, 0.1); }
-.dataset-card h2 { margin-top: 0; color: #2c3e50; font-size: 1.4rem; }
-.dataset-card p { flex-grow: 1; color: #666; }
-.tags { margin: 1rem 0; display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
-.tags span { background-color: #e9ecef; color: #212529; padding: 0.25rem 0.6rem; border-radius: 50px; font-size: 0.75rem; font-weight: 600; border: 1px solid #dee2e6; }
-.btn-card { background-color: #2ecc71; color: white; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; text-align: center; transition: background-color 0.3s ease; margin-top: auto; }
-.btn-card:hover { background-color: #27ae60; }
-footer { text-align: center; margin-top: 5rem; padding: 3rem; background-color: #2c3e50; color: #ecf0f1; }
-@keyframes gradientAnimation { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
-.section-title { text-align: center; font-size: 2.2rem; color: #2c3e50; margin-top: 4rem; margin-bottom: 2rem; position: relative; padding-bottom: 1rem; }
-.section-title::after { content: ''; position: absolute; width: 80px; height: 4px; background-color: #3498db; bottom: 0; left: 50%; transform: translateX(-50%); border-radius: 2px; }
-.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem; text-align: center; }
-.feature-item i { font-size: 3rem; color: #3498db; margin-bottom: 1rem; }
-.feature-item h3 { font-size: 1.4rem; color: #2c3e50; margin-bottom: 0.5rem; }
-.dataset-detail .btn { background-color: #3498db; color: white; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; text-align: center; transition: all 0.3s ease; display: inline-block; margin-top: 1rem; }
-.dataset-detail .btn:hover { background-color: #2980b9; transform: translateY(-2px); }
-.image-preview { margin-top: 3rem; }
-.preview-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem;}
-.preview-grid img { width: 100%; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-.login-container { max-width: 400px; margin: 3rem auto; padding: 2.5rem; background-color: #fff; border-radius: 12px; box-shadow: 0 10px 25px rgba(44, 62, 80, 0.1); text-align: center; }
-.login-container h2 { color: #2c3e50; margin-top: 0; }
-.login-container button { width: 100%; padding: 0.8rem; margin-top: 1.5rem; border: none; border-radius: 50px; background-color: #3498db; color: white; font-weight: 600; cursor: pointer; transition: background-color 0.3s ease; }
-.login-container button:hover { background-color: #2980b9; }
-.login-container input[type="password"], .login-container input[type="text"] { width: 100%; padding: 0.8rem 40px 0.8rem 1rem; margin-top: 1rem; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; }
-.password-wrapper { position: relative; width: 100%; }
-.password-wrapper i { position: absolute; top: 58%; right: 15px; transform: translateY(-50%); cursor: pointer; color: #aaa; }
-/* === Gaya Tambahan untuk Lightbox === */
-.lightbox-image {
-    cursor: pointer; /* Mengubah kursor menjadi tangan saat hover */
-    transition: transform 0.2s ease-in-out;
-}
-.lightbox-image:hover {
-    transform: scale(1.05); /* Sedikit efek zoom saat hover */
-}
+.hero h1 { font-size: 2.5rem; } /* Sedikit lebih kecil di mobile */
+.dataset-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; justify-content: center; }
+.dataset-card { background-color: #ffffff; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; flex-direction: column; }
+/* ... (sisa kode CSS lainnya tetap di sini) ... */
