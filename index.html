@@ -9,9 +9,7 @@
 </head>
 <body>
     <div class="page-wrapper">
-        <!-- Sidebar untuk Desktop -->
         <aside class="sidebar" id="sidebar">
-            <!-- Isi sidebar tetap sama -->
             <div class="sidebar-header">
                 <button class="toggle-btn" id="desktop-toggle-btn"><i class="fas fa-bars"></i></button>
                 <a href="index.html" class="logo">Paijo Willbig</a>
@@ -22,16 +20,11 @@
                 <a href="about.html" class="nav-link"><i class="fas fa-users"></i><span class="link-text">Tentang Kami</span></a>
             </nav>
         </aside>
-
-        <!-- Header KHUSUS untuk Mobile -->
         <header class="mobile-header">
             <a href="index.html" class="logo">Paijo Willbig</a>
             <button class="toggle-btn" id="mobile-toggle-btn"><i class="fas fa-bars"></i></button>
         </header>
-
-        <!-- Konten Utama Halaman -->
         <main class="main-content">
-            <!-- Isi konten utama tetap sama -->
             <header class="content-header">
                 <h2>Selamat Datang!</h2>
             </header>
@@ -44,9 +37,21 @@
                 <section class="featured-section">
                     <h2 class="section-title">Dataset Unggulan</h2>
                     <div class="dataset-list">
-                        <div class="dataset-card"><a href="pneumonia-details.html" class="btn-card">Lihat Detail</a></div>
-                        <div class="dataset-card"><a href="batu-ginjal-details.html" class="btn-card">Lihat Detail</a></div>
-                        <div class="dataset-card"><a href="login.html" class="btn-card">Dapatkan Akses</a></div>
+                        <div class="dataset-card">
+                            <h2>Pneumonia Image (v1)</h2>
+                            <p>Kumpulan gambar X-Ray dada untuk pengujian awal deteksi pneumonia.</p>
+                            <a href="pneumonia-details.html" class="btn-card">Lihat Detail</a>
+                        </div>
+                        <div class="dataset-card">
+                            <h2>Kidney Stone (CT Scan)</h2>
+                            <p>Kumpulan gambar CT Scan untuk identifikasi dan analisis batu ginjal.</p>
+                            <a href="batu-ginjal-details.html" class="btn-card">Lihat Detail</a>
+                        </div>
+                        <div class="dataset-card">
+                            <h2>[PREMIUM] EEG Signal</h2>
+                            <p>Dataset eksklusif berisi sinyal EEG mentah untuk analisis aktivitas otak.</p>
+                            <a href="login.html" class="btn-card">Dapatkan Akses</a>
+                        </div>
                     </div>
                 </section>
                 <section class="features-section">
@@ -60,9 +65,7 @@
             </div>
         </main>
     </div>
-    
     <div class="overlay" id="overlay"></div>
-
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script>
         var typed = new Typed('#typed-text', {
