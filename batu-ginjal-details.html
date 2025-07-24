@@ -22,7 +22,6 @@
                 <a href="about.html" class="nav-link"><i class="fas fa-users"></i><span class="link-text">Tentang Kami</span></a>
             </nav>
         </aside>
-
         <!-- Header Mobile -->
         <header class="mobile-header">
             <a href="index.html" class="logo">Paijo Willbig</a>
@@ -41,27 +40,46 @@
             </section>
             <section class="image-preview">
                 <h2>Preview Gambar</h2>
-                <div class="preview-grid">
-                    <!-- Masukkan link-link gambar Anda di sini -->
-                    <img src="LINK_GAMBAR_1_ANDA" alt="Preview CT Scan 1" class="lightbox-image" oncontextmenu="return false;">
-                    <img src="LINK_GAMBAR_2_ANDA" alt="Preview CT Scan 2" class="lightbox-image" oncontextmenu="return false;">
-                    <!-- ...dan seterusnya... -->
+                <!-- "PANGGUNG" KOSONG UNTUK GALERI OTOMATIS -->
+                <div class="preview-grid" id="gallery-container">
+                    <!-- JavaScript akan mengisi gambar di sini -->
                 </div>
             </section>
         </main>
     </div>
     
     <div class="overlay" id="overlay"></div>
+    <!-- Script Wajib -->
     <script src="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.js"></script>
+    <script src="js/main.js"></script>
+    <!-- "DATABASE" GAMBAR KITA -->
+    <script src="js/datasets.js"></script>
+
+    <!-- SCRIPT AKTIVASI GALERI OTOMATIS -->
     <script>
-        document.querySelectorAll('.lightbox-image').forEach(item => {
-            item.addEventListener('click', event => {
-                event.preventDefault();
-                const imageUrl = event.target.getAttribute('src');
-                basicLightbox.create(`<img src="${imageUrl}">`).show();
+        document.addEventListener('DOMContentLoaded', function() {
+            const galleryContainer = document.getElementById('gallery-container');
+            const dataset = allDatasets.kidneyStone; // Mengambil data Batu Ginjal
+
+            // Loop untuk setiap nama file gambar dan buat elemen <img>
+            dataset.images.forEach((imageName, index) => {
+                const fullUrl = `${dataset.basePath}${imageName}?raw=true`;
+                const imgElement = document.createElement('img');
+                imgElement.src = fullUrl;
+                imgElement.alt = `Preview CT Scan ${index + 1}`;
+                imgElement.className = 'lightbox-image';
+                imgElement.setAttribute('oncontextmenu', 'return false;');
+                galleryContainer.appendChild(imgElement);
+            });
+
+            // Aktifkan kembali lightbox untuk gambar yang baru dibuat
+            document.querySelectorAll('.lightbox-image').forEach(item => {
+                item.addEventListener('click', event => {
+                    event.preventDefault();
+                    basicLightbox.create(`<img src="${event.target.src}">`).show();
+                });
             });
         });
     </script>
-    <script src="js/main.js"></script>
 </body>
 </html>
