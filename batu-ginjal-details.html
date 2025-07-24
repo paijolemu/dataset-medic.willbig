@@ -6,7 +6,7 @@
     <title>Detail Dataset Batu Ginjal - Paijo Willbig</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css"> <!-- Path diperbaiki -->
 </head>
 <body>
     <div class="page-wrapper">
@@ -14,17 +14,17 @@
         <aside class="sidebar" id="sidebar">
             <div class="sidebar-header">
                 <button class="toggle-btn" id="desktop-toggle-btn"><i class="fas fa-bars"></i></button>
-                <a href="index.html" class="logo">Paijo Willbig</a>
+                <a href="../index.html" class="logo">Paijo Willbig</a> <!-- Path diperbaiki -->
             </div>
             <nav class="sidebar-nav">
-                <a href="index.html" class="nav-link"><i class="fas fa-home"></i><span class="link-text">Beranda</span></a>
-                <a href="datasets.html" class="nav-link active"><i class="fas fa-database"></i><span class="link-text">Datasets</span></a>
-                <a href="about.html" class="nav-link"><i class="fas fa-users"></i><span class="link-text">Tentang Kami</span></a>
+                <a href="../index.html" class="nav-link"><i class="fas fa-home"></i><span class="link-text">Beranda</span></a>
+                <a href="../datasets.html" class="nav-link active"><i class="fas fa-database"></i><span class="link-text">Datasets</span></a>
+                <a href="../about.html" class="nav-link"><i class="fas fa-users"></i><span class="link-text">Tentang Kami</span></a>
             </nav>
         </aside>
         <!-- Header Mobile -->
         <header class="mobile-header">
-            <a href="index.html" class="logo">Paijo Willbig</a>
+            <a href="../index.html" class="logo">Paijo Willbig</a> <!-- Path diperbaiki -->
             <button class="toggle-btn" id="mobile-toggle-btn"><i class="fas fa-bars"></i></button>
         </header>
 
@@ -40,7 +40,6 @@
             </section>
             <section class="image-preview">
                 <h2>Preview Gambar</h2>
-                <!-- "PANGGUNG" KOSONG UNTUK GALERI OTOMATIS -->
                 <div class="preview-grid" id="gallery-container">
                     <!-- JavaScript akan mengisi gambar di sini -->
                 </div>
@@ -51,18 +50,15 @@
     <div class="overlay" id="overlay"></div>
     <!-- Script Wajib -->
     <script src="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.js"></script>
-    <script src="js/main.js"></script>
-    <!-- "DATABASE" GAMBAR KITA -->
-    <script src="js/datasets.js"></script>
+    <script src="../js/main.js"></script> <!-- Path diperbaiki -->
+    <script src="../js/datasets.js"></script> <!-- Path diperbaiki -->
 
     <!-- SCRIPT AKTIVASI GALERI OTOMATIS -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const galleryContainer = document.getElementById('gallery-container');
-            // Pastikan kita mengambil data Batu Ginjal
             if (window.allDatasets && allDatasets.kidneyStone) {
                 const dataset = allDatasets.kidneyStone;
-
                 dataset.images.forEach((imageName, index) => {
                     const fullUrl = `${dataset.basePath}${imageName}?raw=true`;
                     const imgElement = document.createElement('img');
@@ -72,7 +68,6 @@
                     imgElement.setAttribute('oncontextmenu', 'return false;');
                     galleryContainer.appendChild(imgElement);
                 });
-
                 document.querySelectorAll('.lightbox-image').forEach(item => {
                     item.addEventListener('click', event => {
                         event.preventDefault();
