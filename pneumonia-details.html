@@ -3,71 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paijo Willbig - Medical Dataset Platform</title>
+    <title>Detail Dataset Pneumonia - Paijo Willbig</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="page-wrapper">
-        <!-- Sidebar untuk Desktop -->
+        <!-- Sidebar -->
         <aside class="sidebar" id="sidebar">
-            <!-- Isi sidebar tetap sama -->
             <div class="sidebar-header">
                 <button class="toggle-btn" id="desktop-toggle-btn"><i class="fas fa-bars"></i></button>
                 <a href="index.html" class="logo">Paijo Willbig</a>
             </div>
             <nav class="sidebar-nav">
-                <a href="index.html" class="nav-link active"><i class="fas fa-home"></i><span class="link-text">Beranda</span></a>
-                <a href="datasets.html" class="nav-link"><i class="fas fa-database"></i><span class="link-text">Datasets</span></a>
+                <a href="index.html" class="nav-link"><i class="fas fa-home"></i><span class="link-text">Beranda</span></a>
+                <a href="datasets.html" class="nav-link active"><i class="fas fa-database"></i><span class="link-text">Datasets</span></a>
                 <a href="about.html" class="nav-link"><i class="fas fa-users"></i><span class="link-text">Tentang Kami</span></a>
             </nav>
         </aside>
 
-        <!-- Header KHUSUS untuk Mobile -->
+        <!-- Header Mobile -->
         <header class="mobile-header">
             <a href="index.html" class="logo">Paijo Willbig</a>
             <button class="toggle-btn" id="mobile-toggle-btn"><i class="fas fa-bars"></i></button>
         </header>
 
-        <!-- Konten Utama Halaman -->
+        <!-- Konten Halaman Detail Pneumonia -->
         <main class="main-content">
-            <!-- Isi konten utama tetap sama -->
-            <header class="content-header">
-                <h2>Selamat Datang!</h2>
-            </header>
-            <section class="hero">
-                <h1><span id="typed-text"></span></h1>
-                <p>Menyediakan dataset medis berkualitas tinggi dan terkurasi untuk mendorong inovasi dan penelitian di bidang kesehatan.</p>
-                <a href="datasets.html" class="btn">Jelajahi Semua Dataset</a>
+            <section class="dataset-detail">
+                <h1>Pneumonia Image Dataset (v1)</h1>
+                <p>Ini adalah dataset awal kami untuk deteksi pneumonia, berisi 6 gambar X-Ray dada. Dataset ini sangat cocok untuk pengujian model awal atau untuk tujuan edukasi. Gambar telah dianonimkan dan siap digunakan.</p>
+                <div class="tags">
+                    <span>Citra Medis</span><span>X-Ray</span><span>Pneumonia</span><span>Test Data</span>
+                </div>
+                <a href="https://raw.githack.com/paijolemu/dataset-medic.willbig/main/datasets/pneumonia-testing-versi1/testing.zip" class="btn">Download Full Dataset (.zip)</a>
             </section>
-            <div class="container">
-                <section class="featured-section">
-                    <h2 class="section-title">Dataset Unggulan</h2>
-                    <div class="dataset-list">
-                        <div class="dataset-card"><a href="pneumonia-details.html" class="btn-card">Lihat Detail</a></div>
-                        <div class="dataset-card"><a href="batu-ginjal-details.html" class="btn-card">Lihat Detail</a></div>
-                        <div class="dataset-card"><a href="login.html" class="btn-card">Dapatkan Akses</a></div>
-                    </div>
-                </section>
-                <section class="features-section">
-                    <h2 class="section-title">Mengapa Memilih Platform Kami?</h2>
-                    <div class="features-grid">
-                        <div class="feature-item"><i class="fas fa-check-circle"></i><h3>Data Terkurasi</h3><p>Setiap dataset telah diseleksi dan dipersiapkan untuk memastikan kualitasnya.</p></div>
-                        <div class="feature-item"><i class="fas fa-unlock-alt"></i><h3>Akses Terbuka</h3><p>Kami berkomitmen untuk menyediakan data yang dapat diakses secara bebas untuk riset.</p></div>
-                        <div class="feature-item"><i class="fas fa-rocket"></i><h3>Mendorong Inovasi</h3><p>Data kami dirancang untuk membantu Anda membangun model AI canggih di bidang kesehatan.</p></div>
-                    </div>
-                </section>
-            </div>
+            <section class="image-preview">
+                <h2>Preview Gambar</h2>
+                <div class="preview-grid">
+                    <img src="https://github.com/paijolemu/dataset-medic.willbig/blob/main/datasets/pneumonia-testing-versi1/person100_bacteria_481.jpg?raw=true" alt="Preview Gambar 1" class="lightbox-image" oncontextmenu="return false;">
+                    <img src="https://github.com/paijolemu/dataset-medic.willbig/blob/main/datasets/pneumonia-testing-versi1/person100_bacteria_480.jpg?raw=true" alt="Preview Gambar 2" class="lightbox-image" oncontextmenu="return false;">
+                    <img src="https://github.com/paijolemu/dataset-medic.willbig/blob/main/datasets/pneumonia-testing-versi1/person100_bacteria_479.jpg?raw=true" alt="Preview Gambar 3" class="lightbox-image" oncontextmenu="return false;">
+                    <img src="https://github.com/paijolemu/dataset-medic.willbig/blob/main/datasets/pneumonia-testing-versi1/person100_bacteria_477.jpg?raw=true" alt="Preview Gambar 4" class="lightbox-image" oncontextmenu="return false;">
+                    <img src="https://github.com/paijolemu/dataset-medic.willbig/blob/main/datasets/pneumonia-testing-versi1/person100_bacteria_475.jpg?raw=true" alt="Preview Gambar 5" class="lightbox-image" oncontextmenu="return false;">
+                    <img src="https://github.com/paijolemu/dataset-medic.willbig/blob/main/datasets/pneumonia-testing-versi1/person100_bacteria_478.jpg?raw=true" alt="Preview Gambar 6" class="lightbox-image" oncontextmenu="return false;">
+                </div>
+            </section>
         </main>
     </div>
     
     <div class="overlay" id="overlay"></div>
-
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.js"></script>
     <script>
-        var typed = new Typed('#typed-text', {
-            strings: ["Platform Dataset Medis", "Akses Data untuk Riset", "Inovasi untuk Kesehatan"],
-            typeSpeed: 50, backSpeed: 25, backDelay: 2000, startDelay: 500, loop: true, smartBackspace: true
+        document.querySelectorAll('.lightbox-image').forEach(item => {
+            item.addEventListener('click', event => {
+                event.preventDefault();
+                const imageUrl = event.target.getAttribute('src');
+                basicLightbox.create(`<img src="${imageUrl}">`).show();
+            });
         });
     </script>
     <script src="js/main.js"></script>
