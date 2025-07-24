@@ -1,16 +1,30 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const toggleBtn = document.getElementById('toggle-btn');
+    const desktopToggleBtn = document.getElementById('desktop-toggle-btn');
+    const mobileToggleBtn = document.getElementById('mobile-toggle-btn');
     const sidebar = document.getElementById('sidebar');
     const body = document.body;
+    const overlay = document.getElementById('overlay');
 
-    // Fungsi untuk mengubah status sidebar
-    function toggleSidebar() {
+    // Fungsi untuk toggle sidebar di DESKTOP
+    function toggleDesktopSidebar() {
         sidebar.classList.toggle('collapsed');
-        body.classList.toggle('sidebar-collapsed'); // Ini penting untuk konten utama
+        body.classList.toggle('sidebar-collapsed');
     }
 
-    // Tambahkan event listener ke tombol
-    if (toggleBtn) {
-        toggleBtn.addEventListener('click', toggleSidebar);
+    // Fungsi untuk toggle sidebar di MOBILE
+    function toggleMobileSidebar() {
+        sidebar.classList.toggle('mobile-active');
+        overlay.classList.toggle('active');
+    }
+
+    // Tambahkan event listener
+    if (desktopToggleBtn) {
+        desktopToggleBtn.addEventListener('click', toggleDesktopSidebar);
+    }
+    if (mobileToggleBtn) {
+        mobileToggleBtn.addEventListener('click', toggleMobileSidebar);
+    }
+    if (overlay) {
+        overlay.addEventListener('click', toggleMobileSidebar); // Tutup saat klik overlay
     }
 });
