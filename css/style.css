@@ -74,3 +74,14 @@ body.sidebar-collapsed .main-content { margin-left: 80px; width: calc(100% - 80p
 .login-container input[type="password"], .login-container input[type="text"] { width: 100%; padding: 0.8rem 40px 0.8rem 1rem; margin-top: 1rem; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; }
 .password-wrapper { position: relative; width: 100%; }
 .password-wrapper i { position: absolute; top: 58%; right: 15px; transform: translateY(-50%); cursor: pointer; color: #aaa; }
+/* === Gaya Tambahan untuk Lightbox & Interaktivitas Gambar === */
+
+.lightbox-image {
+    cursor: pointer; /* Mengubah kursor menjadi tangan saat hover */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.lightbox-image:hover {
+    transform: scale(1.05); /* Sedikit efek zoom saat hover */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* Bayangan lebih jelas saat hover */
+}
