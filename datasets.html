@@ -35,7 +35,33 @@
                 <p>Gunakan filter atau pencarian untuk menemukan dataset yang Anda butuhkan.</p>
             </header>
 
-            <!-- ===== BAGIAN BARU: KONTROL FILTER & PENCARIAN ===== -->
+            <!-- ===== BAGIAN BARU 1: KARTU STATISTIK ===== -->
+            <div class="stats-banner">
+                <div class="stat-card">
+                    <i class="fas fa-database"></i>
+                    <div>
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">Total Datasets</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-images"></i>
+                    <div>
+                        <span class="stat-number">12+</span>
+                        <span class="stat-label">Total Gambar</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-layer-group"></i>
+                    <div>
+                        <span class="stat-number">2</span>
+                        <span class="stat-label">Kategori Utama</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Kontrol Filter & Pencarian -->
             <div class="controls">
                 <div class="search-wrapper">
                     <i class="fas fa-search"></i>
@@ -50,16 +76,22 @@
 
             <!-- Daftar Dataset akan diisi oleh JavaScript -->
             <div class="dataset-list" id="dataset-list-container">
-                <!-- Pesan jika tidak ada hasil -->
                 <p class="no-results" style="display: none;">Tidak ada dataset yang cocok dengan kriteria Anda.</p>
             </div>
+
+            <!-- ===== BAGIAN BARU 2: CALL TO ACTION (CTA) ===== -->
+            <section class="cta-section">
+                <h2>Punya Dataset untuk Dibagikan?</h2>
+                <p>Proyek ini berkembang berkat kontribusi komunitas. Jika Anda memiliki dataset medis yang ingin dibagikan, mari berkolaborasi untuk memajukan riset kesehatan bersama.</p>
+                <a href="about.html" class="btn">Hubungi Kami</a>
+            </section>
+
         </main>
     </div>
     
     <div class="overlay" id="overlay"></div>
     <!-- Script Wajib -->
     <script src="js/main.js"></script>
-    <!-- Script BARU untuk logika filter & pencarian -->
     <script src="js/filter.js"></script>
 </body>
 </html>
