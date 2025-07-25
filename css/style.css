@@ -85,3 +85,68 @@ body.sidebar-collapsed .main-content { margin-left: 80px; width: calc(100% - 80p
     transform: scale(1.05); /* Sedikit efek zoom saat hover */
     box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* Bayangan lebih jelas saat hover */
 }
+
+/* === Gaya untuk Filter & Pencarian === */
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.search-wrapper {
+    position: relative;
+    flex-grow: 1; /* Agar mengisi ruang yang tersedia */
+}
+
+.search-wrapper i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 0.8rem 1rem 0.8rem 40px; /* Ruang untuk ikon search */
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+.filter-wrapper {
+    display: flex;
+    gap: 0.5rem;
+    background-color: #e9ecef;
+    padding: 0.3rem;
+    border-radius: 50px;
+}
+
+.filter-btn {
+    border: none;
+    background-color: transparent;
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background-color: #ffffff;
+    color: #3498db;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.no-results {
+    grid-column: 1 / -1; /* Membuat pesan ini memenuhi seluruh lebar grid */
+    text-align: center;
+    font-size: 1.2rem;
+    color: #777;
+    margin-top: 2rem;
+}
