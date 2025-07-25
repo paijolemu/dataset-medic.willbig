@@ -32,44 +32,34 @@
         <main class="main-content">
             <header class="content-header">
                 <h1>Koleksi Dataset Kami</h1>
-                <p>Pilih dataset yang Anda butuhkan untuk proyek riset atau pengembangan AI Anda.</p>
+                <p>Gunakan filter atau pencarian untuk menemukan dataset yang Anda butuhkan.</p>
             </header>
-            <div class="dataset-list">
-                <div class="dataset-card">
-                    <h2>Pneumonia Image Dataset (v1)</h2>
-                    <p>Kumpulan 6 gambar X-Ray dada untuk pengujian awal deteksi pneumonia.</p>
-                    <div class="tags">
-                        <span>Citra Medis</span>
-                        <span>X-Ray</span>
-                        <span>Pneumonia</span>
-                    </div>
-                    <a href="pneumonia-details.html" class="btn-card">Lihat Detail & Gambar</a>
+
+            <!-- ===== BAGIAN BARU: KONTROL FILTER & PENCARIAN ===== -->
+            <div class="controls">
+                <div class="search-wrapper">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Cari dataset (e.g., Pneumonia, CT Scan...)">
                 </div>
-                <div class="dataset-card">
-                    <h2>Kidney Stone (CT Scan) Dataset</h2>
-                    <p>Kumpulan gambar dari CT Scan untuk identifikasi dan analisis batu ginjal.</p>
-                    <div class="tags">
-                        <span>Citra Medis</span>
-                        <span>CT Scan</span>
-                        <span>Batu Ginjal</span>
-                    </div>
-                    <a href="batu-ginjal-details.html" class="btn-card">Lihat Detail & Gambar</a>
+                <div class="filter-wrapper">
+                    <button class="filter-btn active" data-filter="all">Semua</button>
+                    <button class="filter-btn" data-filter="citra-medis">Citra Medis</button>
+                    <button class="filter-btn" data-filter="sinyal-medis">Sinyal Medis</button>
                 </div>
-                <div class="dataset-card">
-                    <h2>[PREMIUM] EEG Brain Signal</h2>
-                    <p>Dataset eksklusif berisi sinyal EEG mentah untuk analisis aktivitas otak. Akses terbatas.</p>
-                    <div class="tags">
-                        <span>Sinyal Medis</span>
-                        <span>EEG</span>
-                        <span>Premium</span>
-                    </div>
-                    <a href="login.html" class="btn-card">Dapatkan Akses</a>
-                </div>
+            </div>
+
+            <!-- Daftar Dataset akan diisi oleh JavaScript -->
+            <div class="dataset-list" id="dataset-list-container">
+                <!-- Pesan jika tidak ada hasil -->
+                <p class="no-results" style="display: none;">Tidak ada dataset yang cocok dengan kriteria Anda.</p>
             </div>
         </main>
     </div>
     
     <div class="overlay" id="overlay"></div>
+    <!-- Script Wajib -->
     <script src="js/main.js"></script>
+    <!-- Script BARU untuk logika filter & pencarian -->
+    <script src="js/filter.js"></script>
 </body>
 </html>
