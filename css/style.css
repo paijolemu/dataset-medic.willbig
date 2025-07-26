@@ -138,3 +138,41 @@ body.sidebar-collapsed .main-content { margin-left: 80px; width: calc(100% - 80p
 .login-container input[type="password"], .login-container input[type="text"] { width: 100%; padding: 0.8rem 40px 0.8rem 1rem; margin-top: 1rem; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; }
 .password-wrapper { position: relative; width: 100%; }
 .password-wrapper i { position: absolute; top: 58%; right: 15px; transform: translateY(-50%); cursor: pointer; color: #aaa; }
+
+/* === Gaya BARU untuk Tombol CTA "Hubungi Kami" === */
+
+.cta-section .btn {
+    background-color: #00c9a7;
+    color: white; /* Teks putih agar mudah dibaca */
+    text-decoration: none; /* Menghilangkan garis bawah aneh */
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(0, 201, 167, 0.3);
+    
+    /* Memanggil animasi "live" yang baru */
+    animation: glowing-pulse 2.5s infinite ease-in-out;
+}
+
+.cta-section .btn:hover {
+    background-color: #00a287;
+    animation-play-state: paused; /* Hentikan animasi saat disentuh */
+    transform: translateY(-2px);
+}
+
+/* Resep animasi "glowing-pulse" */
+@keyframes glowing-pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 4px 15px rgba(0, 201, 167, 0.3);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 8px 30px rgba(0, 201, 167, 0.5);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 4px 15px rgba(0, 201, 167, 0.3);
+    }
+}
