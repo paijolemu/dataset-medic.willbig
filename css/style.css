@@ -209,3 +209,8 @@ body.sidebar-collapsed .main-content { margin-left: 80px; width: calc(100% - 80p
 .cta-section .btn:hover {
     background-color: #27ae60;
 }
+/* Kontainer untuk elemen lebar penuh di dalam konten utama */
+.container-fullwidth {
+    width: 100%;
+    margin-top: 4rem; /* Memberi jarak dari daftar dataset di atasnya */
+}
