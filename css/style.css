@@ -1,5 +1,5 @@
 /* =================================================================== */
-/*                     Paijo Willbig - Master Stylesheet v2            */
+/*                     Paijo Willbig - Master Stylesheet v3            */
 /* =================================================================== */
 
 /* === Import Font & Pengaturan Dasar === */
@@ -16,27 +16,51 @@ body { font-family: 'Poppins', sans-serif; margin: 0; background-color: #f4f7f6;
 
 /* Kondisi Sidebar Diciutkan */
 .sidebar.collapsed { width: 80px; }
-.sidebar.collapsed .logo, .sidebar.collapsed .link-text { opacity: 0; pointer-events: none; }
+.sidebar.collapsed .logo, .sidebar.collapsed .link-text { opacity: 0; visibility: hidden; pointer-events: none; } /* Ditambah visibility */
 body.sidebar-collapsed .main-content { margin-left: 80px; width: calc(100% - 80px); }
 
-/* === Komponen Sidebar (Dengan Perbaikan Alignment) === */
-.sidebar-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
-.logo { font-weight: 700; font-size: 1.4rem; color: #ffffff; text-decoration: none; white-space: nowrap; transition: opacity 0.3s ease-in-out; }
-.toggle-btn { background: none; border: none; cursor: pointer; font-size: 1.1rem; color: #a0aec0; /* Menambahkan padding agar sama dengan nav-link */ padding: 0.6rem 0; }
+/* === Komponen Sidebar (Dengan Perbaikan Alignment FINAL) === */
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    min-height: 32px; /* Memberi tinggi minimum agar tidak collapse */
+    margin-bottom: 2rem;
+}
+.logo {
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: #ffffff;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s;
+    margin-left: 1rem; /* Jarak dari tombol toggle */
+}
+.toggle-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: #a0aec0;
+    padding: 0.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .sidebar-nav { display: flex; flex-direction: column; gap: 0.5rem; }
 .nav-link { display: flex; align-items: center; gap: 0.8rem; text-decoration: none; color: #a0aec0; font-weight: 500; padding: 0.6rem 1rem; border-radius: 6px; transition: background-color 0.2s ease, color 0.2s ease; white-space: nowrap; font-size: 0.85rem; }
 .nav-link i { font-size: 1rem; width: 18px; text-align: center; }
 .nav-link:hover { background-color: rgba(255, 255, 255, 0.1); color: #ffffff; }
 .nav-link.active { background-color: #00c9a7; color: #ffffff; font-weight: 600; }
-.link-text { transition: opacity 0.3s ease-in-out; }
+.link-text { transition: opacity 0.3s ease-in-out, visibility 0.3s; }
 
-/* KUNCI PERBAIKAN ALIGNMENT */
+/* KUNCI PERBAIKAN ALIGNMENT: Tombol toggle diposisikan secara absolut saat diciutkan */
 .sidebar.collapsed .sidebar-header {
-    justify-content: center; /* Memusatkan tombol di dalam header */
+    justify-content: center;
 }
 .sidebar.collapsed .toggle-btn {
-    padding: 0.6rem 0; /* Menyesuaikan padding vertikal agar sama */
+    margin-left: 0; /* Reset margin */
 }
+
 
 /* Media Query untuk Mobile */
 @media (max-width: 768px) {
