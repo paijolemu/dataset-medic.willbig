@@ -117,3 +117,64 @@ body.sidebar-collapsed .main-content { margin-left: 80px; width: calc(100% - 80p
 @keyframes glowing-pulse { 0% { transform: scale(1); box-shadow: 0 4px 15px rgba(0, 201, 167, 0.3); } 50% { transform: scale(1.05); box-shadow: 0 8px 30px rgba(0, 201, 167, 0.5); } 100% { transform: scale(1); box-shadow: 0 4px 15px rgba(0, 201, 167, 0.3); } }
 .animated-card { opacity: 0; animation-name: fadeInUp; animation-duration: 0.6s; animation-timing-function: ease-out; animation-fill-mode: forwards; }
 @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ====================================================== */
+/*          PERBAIKAN FINAL UNTUK FILTER & PENCARIAN      */
+/* ====================================================== */
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.search-wrapper {
+    position: relative;
+    flex-grow: 1;
+}
+
+.search-wrapper i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 0.8rem 1rem 0.8rem 40px;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    background-color: #fff;
+}
+
+.filter-wrapper {
+    display: flex;
+    gap: 0.5rem;
+    background-color: #e9ecef;
+    padding: 0.3rem;
+    border-radius: 50px;
+}
+
+.filter-btn {
+    border: none;
+    background-color: transparent;
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    color: #555;
+}
+
+.filter-btn.active, .filter-btn:hover {s
+    background-color: #ffffff;
+    color: #00c9a7;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
