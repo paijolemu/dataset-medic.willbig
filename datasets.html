@@ -27,6 +27,9 @@
             <a href="index.html" class="logo">Paijo Willbig</a>
             <button class="toggle-btn" id="mobile-toggle-btn"><i class="fas fa-bars"></i></button>
         </header>
+
+        <!-- Konten Halaman Datasets -->
+        <main class="main-content">
             <!-- Kontrol Filter & Pencarian -->
             <div class="controls">
                 <div class="search-wrapper">
@@ -45,18 +48,21 @@
                 <p class="no-results" style="display: none;">Tidak ada dataset yang cocok dengan kriteria Anda.</p>
             </div>
 
-            <!-- ===== BAGIAN BARU 2: CALL TO ACTION (CTA) ===== -->
-            <section class="cta-section">
-                <h2>Punya Dataset untuk Dibagikan?</h2>
-                <p>Proyek ini berkembang berkat kontribusi komunitas. Jika Anda memiliki dataset medis yang ingin dibagikan, mari berkolaborasi untuk memajukan riset kesehatan bersama.</p>
-                <a href="about.html" class="btn">Hubungi Kami</a>
-            </section>
+            <!-- ===== PERBAIKAN DIMULAI DI SINI ===== -->
+            <!-- Kita membungkus CTA di dalam kontainernya sendiri -->
+            <div class="container-fullwidth">
+                <section class="cta-section">
+                    <h2>Punya Dataset untuk Dibagikan?</h2>
+                    <p>Proyek ini berkembang berkat kontribusi komunitas. Jika Anda memiliki dataset medis yang ingin dibagikan, mari berkolaborasi untuk memajukan riset kesehatan bersama.</p>
+                    <a href="about.html" class="btn">Hubungi Kami</a>
+                </section>
+            </div>
+            <!-- ===== PERBAIKAN SELESAI ===== -->
 
         </main>
     </div>
     
     <div class="overlay" id="overlay"></div>
-    <!-- Script Wajib -->
     <script src="js/main.js"></script>
     <script src="js/filter.js"></script>
 </body>
