@@ -1,14 +1,32 @@
-/* Import Font & Pengaturan Dasar */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-body { font-family: 'Poppins', sans-serif; margin: 0; background-color: #f4f7f6; color: #333; line-height: 1.6; }
-.container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+/* =================================================================== */
+/*                     Paijo Willbig - Master Stylesheet               */
+/* =================================================================== */
 
-/* === STRUKTUR UTAMA DENGAN SIDEBAR === */
+/* === Import Font & Pengaturan Dasar === */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: #f4f7f6;
+    color: #34495e; /* Warna teks lebih lembut */
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+
+/* === Struktur Utama & Sidebar === */
 .page-wrapper { display: flex; }
+
 .sidebar {
     width: 250px;
-    background-color: #1a253c; /* WARNA BARU: Biru Navy Gelap */
-    color: #ffffff; /* Teks di sidebar menjadi putih */
+    background-color: #1a253c; /* Biru Navy Gelap */
+    color: #ffffff;
     height: 100vh;
     position: fixed;
     top: 0;
@@ -17,13 +35,19 @@ body { font-family: 'Poppins', sans-serif; margin: 0; background-color: #f4f7f6;
     flex-direction: column;
     padding: 1.5rem 1rem;
     box-sizing: border-box;
-    transition: width 0.4s ease-in-out; 
-    overflow-x: hidden; 
+    transition: width 0.4s ease-in-out;
+    overflow-x: hidden;
     z-index: 1001;
 }
-.main-content { margin-left: 250px; padding: 2rem; width: calc(100% - 250px); transition: margin-left 0.4s ease-in-out, width 0.4s ease-in-out; }
 
-/* Kondisi Sidebar Diciutkan */
+.main-content {
+    margin-left: 250px;
+    padding: 2rem;
+    width: calc(100% - 250px);
+    transition: margin-left 0.4s ease-in-out, width 0.4s ease-in-out;
+}
+
+/* Sidebar Diciutkan */
 .sidebar.collapsed { width: 80px; }
 .sidebar.collapsed .logo, .sidebar.collapsed .link-text { opacity: 0; pointer-events: none; }
 .sidebar.collapsed .toggle-btn { align-self: center; }
@@ -32,63 +56,43 @@ body.sidebar-collapsed .main-content { margin-left: 80px; width: calc(100% - 80p
 /* Komponen Sidebar */
 .sidebar-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
 .logo { font-weight: 700; font-size: 1.4rem; color: #ffffff; text-decoration: none; white-space: nowrap; transition: opacity 0.3s ease-in-out; }
-.toggle-btn { background: none; border: none; cursor: pointer; font-size: 1.1rem; color: #a0aec0; } /* Warna tombol disesuaikan */
+.toggle-btn { background: none; border: none; cursor: pointer; font-size: 1.1rem; color: #a0aec0; }
 .sidebar-nav { display: flex; flex-direction: column; gap: 0.5rem; }
-.nav-link {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    text-decoration: none;
-    color: #a0aec0; /* Warna link default di sidebar */
-    font-weight: 500;
-    padding: 0.6rem 1rem;
-    border-radius: 6px;
-    transition: background-color 0.2s ease, color 0.2s ease;
-    white-space: nowrap;
-    font-size: 0.85rem;
-}
+.nav-link { display: flex; align-items: center; gap: 0.8rem; text-decoration: none; color: #a0aec0; font-weight: 500; padding: 0.6rem 1rem; border-radius: 6px; transition: background-color 0.2s ease, color 0.2s ease; white-space: nowrap; font-size: 0.85rem; }
 .nav-link i { font-size: 1rem; width: 18px; text-align: center; }
 .nav-link:hover { background-color: rgba(255, 255, 255, 0.1); color: #ffffff; }
-.nav-link.active {
-    background-color: #00c9a7; /* WARNA BARU: Teal Terang */
-    color: #ffffff;
-    font-weight: 700;
-}
+.nav-link.active { background-color: #00c9a7; color: #ffffff; font-weight: 600; }
 .link-text { transition: opacity 0.3s ease-in-out; }
 
-/* Media Query untuk Mobile */
+/* === Struktur Mobile === */
 @media (max-width: 768px) {
     .page-wrapper { display: block; }
     .sidebar { transform: translateX(-100%); box-shadow: 0 0 20px rgba(0,0,0,0.2); }
     .sidebar.mobile-active { transform: translateX(0); }
     .main-content { margin-left: 0; width: 100%; box-sizing: border-box; }
-    .mobile-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem;
-        background-color: #1a253c; /* WARNA BARU: Biru Navy Gelap */
-        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-    }
+    .mobile-header { display: flex; justify-content: space-between; align-items: center; padding: 1rem; background-color: #1a253c; box-shadow: 0 2px 10px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 1000; }
     .mobile-header .logo { color: #ffffff; }
     .mobile-header .toggle-btn { color: #a0aec0; }
-
     .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 999; opacity: 0; visibility: hidden; transition: opacity 0.4s ease, visibility 0.4s ease; }
     .overlay.active { opacity: 1; visibility: visible; }
     .hero h1 { font-size: 2.5rem; }
 }
 
-/* Sisa Kode (Konten, Kartu, dll.) */
+/* === Komponen Konten Umum === */
 .content-header { margin-bottom: 2rem; border-bottom: 1px solid #e0e0e0; padding-bottom: 1rem; }
 .content-header h1, .content-header h2 { margin: 0; color: #2c3e50; }
+.section-title { text-align: center; font-size: 2.2rem; color: #2c3e50; margin-top: 4rem; margin-bottom: 2rem; position: relative; padding-bottom: 1rem; }
+.section-title::after { content: ''; position: absolute; width: 80px; height: 4px; background-color: #00c9a7; bottom: 0; left: 50%; transform: translateX(-50%); border-radius: 2px; }
+
+/* === Hero Section (Halaman Utama) === */
 .hero { text-align: center; padding: 5rem 1rem; color: white; border-radius: 12px; background: linear-gradient(-45deg, #00c9a7, #1a253c, #2980b9, #00c9a7); background-size: 400% 400%; animation: gradientAnimation 15s ease infinite; }
 .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
 .hero p { font-size: 1.25rem; max-width: 600px; margin: 0 auto 2.5rem auto; }
 .hero .btn { background-color: #ffffff; color: #1a253c; padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 700; transition: all 0.3s ease; }
 .hero .btn:hover { transform: translateY(-3px); }
+@keyframes gradientAnimation { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+
+/* === Kartu Dataset & Animasi === */
 .dataset-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; justify-content: center; }
 .dataset-card { background-color: #ffffff; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; flex-direction: column; transition: transform 0.3s ease, box-shadow 0.3s ease; }
 .dataset-card:hover { transform: translateY(-8px); box-shadow: 0 10px 25px rgba(44, 62, 80, 0.1); }
@@ -98,17 +102,35 @@ body.sidebar-collapsed .main-content { margin-left: 80px; width: calc(100% - 80p
 .tags span { background-color: #e9ecef; color: #212529; padding: 0.25rem 0.6rem; border-radius: 50px; font-size: 0.75rem; font-weight: 600; border: 1px solid #dee2e6; }
 .btn-card { background-color: #00c9a7; color: white; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; text-align: center; transition: background-color 0.3s ease; margin-top: auto; }
 .btn-card:hover { background-color: #00a287; }
-@keyframes gradientAnimation { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
-.section-title { text-align: center; font-size: 2.2rem; color: #2c3e50; margin-top: 4rem; margin-bottom: 2rem; position: relative; padding-bottom: 1rem; }
-.section-title::after { content: ''; position: absolute; width: 80px; height: 4px; background-color: #00c9a7; bottom: 0; left: 50%; transform: translateX(-50%); border-radius: 2px; }
-.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem; text-align: center; }
-.feature-item i { font-size: 3rem; color: #00c9a7; margin-bottom: 1rem; }
-.feature-item h3 { font-size: 1.4rem; color: #2c3e50; margin-bottom: 0.5rem; }
+.animated-card { opacity: 0; animation-name: fadeInUp; animation-duration: 0.6s; animation-timing-function: ease-out; animation-fill-mode: forwards; }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+/* === Kontrol Filter & Pencarian (Halaman Dataset) === */
+.controls { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem; }
+.search-wrapper { position: relative; flex-grow: 1; }
+.search-wrapper i { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #aaa; }
+#searchInput { width: 100%; padding: 0.8rem 1rem 0.8rem 40px; border: 1px solid #ddd; border-radius: 50px; box-sizing: border-box; font-size: 1rem; background-color: #fff; }
+.filter-wrapper { display: flex; gap: 0.5rem; background-color: #e9ecef; padding: 0.3rem; border-radius: 50px; }
+.filter-btn { border: none; background-color: transparent; padding: 0.6rem 1.2rem; border-radius: 50px; cursor: pointer; font-weight: 600; transition: all 0.3s ease; color: #555; }
+.filter-btn.active, .filter-btn:hover { background-color: #ffffff; color: #00c9a7; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+.no-results { grid-column: 1 / -1; text-align: center; font-size: 1.2rem; color: #777; margin-top: 2rem; }
+
+/* === CTA & Halaman Detail === */
+.container-fullwidth { width: 100%; margin-top: 4rem; }
+.cta-section { text-align: center; background-color: #fff; padding: 3rem 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+.cta-section h2 { color: #2c3e50; margin-top: 0; }
+.cta-section .btn { background-color: #00c9a7; color: white; animation: pulse 2s infinite; }
+.cta-section .btn:hover { background-color: #00a287; animation-play-state: paused; }
+@keyframes pulse { 0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 201, 167, 0.7); } 70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(0, 201, 167, 0); } 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 201, 167, 0); } }
 .dataset-detail .btn { background-color: #3498db; color: white; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; text-align: center; transition: all 0.3s ease; display: inline-block; margin-top: 1rem; }
 .dataset-detail .btn:hover { background-color: #2980b9; transform: translateY(-2px); }
 .image-preview { margin-top: 3rem; }
 .preview-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem;}
-.preview-grid img { width: 100%; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+.preview-grid img, .lightbox-image { width: 100%; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; }
+.lightbox-image:hover { transform: scale(1.05); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+.about-content { background-color: #fff; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+
+/* === Halaman Login === */
 .login-container { max-width: 400px; margin: 3rem auto; padding: 2.5rem; background-color: #fff; border-radius: 12px; box-shadow: 0 10px 25px rgba(44, 62, 80, 0.1); text-align: center; }
 .login-container h2 { color: #2c3e50; margin-top: 0; }
 .login-container button { width: 100%; padding: 0.8rem; margin-top: 1.5rem; border: none; border-radius: 50px; background-color: #3498db; color: white; font-weight: 600; cursor: pointer; transition: background-color 0.3s ease; }
@@ -116,10 +138,3 @@ body.sidebar-collapsed .main-content { margin-left: 80px; width: calc(100% - 80p
 .login-container input[type="password"], .login-container input[type="text"] { width: 100%; padding: 0.8rem 40px 0.8rem 1rem; margin-top: 1rem; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; }
 .password-wrapper { position: relative; width: 100%; }
 .password-wrapper i { position: absolute; top: 58%; right: 15px; transform: translateY(-50%); cursor: pointer; color: #aaa; }
-.cta-section { text-align: center; background-color: #fff; padding: 3rem 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-.container-fullwidth { width: 100%; margin-top: 4rem; }
-.cta-section h2 { color: #2c3e50; margin-top: 0; }
-.cta-section .btn { background-color: #00c9a7; color: white; }
-.cta-section .btn:hover { background-color: #00a287; }
-.animated-card { opacity: 0; animation-name: fadeInUp; animation-duration: 0.6s; animation-timing-function: ease-out; animation-fill-mode: forwards; }
-@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
