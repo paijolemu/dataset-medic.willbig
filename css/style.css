@@ -214,3 +214,30 @@ body.sidebar-collapsed .main-content { margin-left: 80px; width: calc(100% - 80p
     width: 100%;
     margin-top: 4rem; /* Memberi jarak dari daftar dataset di atasnya */
 }
+/* === Animasi untuk Kartu Dataset === */
+
+/* Definisikan animasinya */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Terapkan animasi ke kartu */
+.animated-card {
+    /* Mulai dalam keadaan transparan agar tidak "flash" sebelum animasi */
+    opacity: 0; 
+    
+    /* Panggil animasi */
+    animation-name: fadeInUp;
+    animation-duration: 0.6s;
+    animation-timing-function: ease-out;
+    
+    /* Pastikan kartu tetap terlihat setelah animasi selesai */
+    animation-fill-mode: forwards; 
+}
