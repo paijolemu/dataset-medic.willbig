@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
     // "DATABASE" MINI KITA
-    // Setiap item memiliki 'tags' untuk difilter
     const datasets = [
         {
             title: "Pneumonia Image Dataset (v1)",
@@ -20,7 +19,6 @@ document.addEventListener('DOMContentLoaded', function() {
             link: "login.html",
             tags: ["sinyal-medis", "eeg", "premium"]
         }
-        // Tambahkan dataset baru di sini di masa depan
     ];
 
     const container = document.getElementById('dataset-list-container');
@@ -30,20 +28,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let currentFilter = 'all';
 
-    // Fungsi untuk menampilkan dataset berdasarkan data yang diberikan
+    // Fungsi untuk menampilkan dataset
     function displayDatasets(items) {
-        container.innerHTML = ''; // Kosongkan kontainer
+        container.innerHTML = ''; 
         if (items.length === 0) {
             noResultsMsg.style.display = 'block';
         } else {
             noResultsMsg.style.display = 'none';
         }
 
-        items.forEach(item => {
+        items.forEach((item, index) => {
             const card = document.createElement('div');
-            card.className = 'dataset-card';
+            card.className = 'dataset-card animated-card'; // Tambahkan kelas 'animated-card'
             
-            // Membuat tag HTML dari array tags
+            // Atur delay animasi berdasarkan urutan kartu
+            card.style.animationDelay = `${index * 0.1}s`;
+
             const tagsHTML = item.tags.map(tag => `<span>${tag.replace(/-/g, ' ')}</span>`).join('');
 
             card.innerHTML = `
@@ -56,17 +56,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Fungsi untuk memfilter dan mencari
+    // Fungsi untuk filter dan pencarian
     function filterAndSearch() {
         const searchTerm = searchInput.value.toLowerCase();
         
         let filteredItems = datasets.filter(item => {
-            // Filter berdasarkan kategori
             const categoryMatch = currentFilter === 'all' || item.tags.includes(currentFilter);
-            
-            // Filter berdasarkan pencarian (mencari di judul atau deskripsi)
             const searchMatch = item.title.toLowerCase().includes(searchTerm) || item.description.toLowerCase().includes(searchTerm);
-            
             return categoryMatch && searchMatch;
         });
         
@@ -86,6 +82,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Event listener untuk search bar
     searchInput.addEventListener('input', filterAndSearch);
 
-    // Tampilkan semua dataset saat halaman pertama kali dimuat
+    // Tampilkan semua dataset saat halaman dimuat
     displayDatasets(datasets);
 });
