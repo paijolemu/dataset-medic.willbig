@@ -50,7 +50,12 @@ body {
 /* Sidebar Diciutkan */
 .sidebar.collapsed { width: 80px; }
 .sidebar.collapsed .logo, .sidebar.collapsed .link-text { opacity: 0; pointer-events: none; }
-.sidebar.collapsed .toggle-btn { align-self: center; }
+.sidebar.collapsed .toggle-btn {
+    /* Kita buat tombolnya menjadi flex container */
+    display: flex;
+    justify-content: center; /* Ini akan memusatkan ikon di dalamnya */
+    width: 100%; /* Pastikan tombol mengisi lebar agar pusatnya benar */
+}
 body.sidebar-collapsed .main-content { margin-left: 80px; width: calc(100% - 80px); }
 
 /* Komponen Sidebar */
