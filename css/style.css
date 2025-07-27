@@ -178,3 +178,18 @@ body.sidebar-collapsed .main-content { margin-left: 80px; width: calc(100% - 80p
     color: #00c9a7;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
+/* ====================================================== */
+/*    GAYA KHUSUS UNTUK KARTU UNGGULAN DI HALAMAN UTAMA    */
+/* ====================================================== */
+
+/* Memaksa 3 kartu untuk selalu berjajar */
+.featured-list {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Penyesuaian untuk layar yang lebih kecil (tablet) */
+@media (max-width: 992px) {
+    .featured-list {
+        grid-template-columns: 1fr; /* Membuatnya menjadi 1 kolom di tablet */
+    }
+}
