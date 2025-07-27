@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daftar Dataset - Paijo Willbig</title>
     <link rel="icon" type="image/png" href="favicon.png">
+    <meta name="description" content="Jelajahi koleksi dataset medis kami, termasuk Pneumonia dan Batu Ginjal. Filter dan cari data yang Anda butuhkan.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="page-wrapper">
-        <!-- Sidebar -->
         <aside class="sidebar" id="sidebar">
             <div class="sidebar-header">
                 <button class="toggle-btn" id="desktop-toggle-btn"><i class="fas fa-bars"></i></button>
@@ -22,16 +22,11 @@
                 <a href="about.html" class="nav-link"><i class="fas fa-users"></i><span class="link-text">Tentang Kami</span></a>
             </nav>
         </aside>
-
-        <!-- Header Mobile -->
         <header class="mobile-header">
             <a href="index.html" class="logo">Paijo Willbig</a>
             <button class="toggle-btn" id="mobile-toggle-btn"><i class="fas fa-bars"></i></button>
         </header>
-
-        <!-- Konten Halaman Datasets -->
         <main class="main-content">
-            <!-- Kontrol Filter & Pencarian -->
             <div class="controls">
                 <div class="search-wrapper">
                     <i class="fas fa-search"></i>
@@ -43,14 +38,9 @@
                     <button class="filter-btn" data-filter="sinyal-medis">Sinyal Medis</button>
                 </div>
             </div>
-
-            <!-- Daftar Dataset akan diisi oleh JavaScript -->
             <div class="dataset-list" id="dataset-list-container">
                 <p class="no-results" style="display: none;">Tidak ada dataset yang cocok dengan kriteria Anda.</p>
             </div>
-
-            <!-- ===== PERBAIKAN DIMULAI DI SINI ===== -->
-            <!-- Kita membungkus CTA di dalam kontainernya sendiri -->
             <div class="container-fullwidth">
                 <section class="cta-section">
                     <h2>Punya Dataset untuk Dibagikan?</h2>
@@ -58,11 +48,16 @@
                     <a href="about.html" class="btn">Hubungi Kami</a>
                 </section>
             </div>
-            <!-- ===== PERBAIKAN SELESAI ===== -->
-
         </main>
+        <footer>
+            <div class="footer-content">
+                <p>© 2025 Paijo Willbig. Dibuat dengan semangat untuk memajukan riset kesehatan.</p>
+                <div class="footer-links">
+                    <a href="https://github.com/paijolemu/dataset-medic.willbig" target="_blank" title="Kode Sumber di GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </footer>
     </div>
-    
     <div class="overlay" id="overlay"></div>
     <script src="js/main.js"></script>
     <script src="js/filter.js"></script>
