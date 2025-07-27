@@ -178,3 +178,23 @@ body.sidebar-collapsed .main-content { margin-left: 80px; width: calc(100% - 80p
     color: #00c9a7;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
+/* ====================================================== */
+/*          PERBAIKAN FINAL UNTUK POSISI FOOTER           */
+/* ====================================================== */
+
+/* Membuat konten utama menjadi fleksibel secara vertikal */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 4rem); /* Tinggi minimal (100% layar - padding atas/bawah) */
+}
+
+/* Mendorong semua konten di atasnya ke atas */
+.container, .hero, .controls, .dataset-list, .about-content, .login-container {
+    flex-grow: 1;
+}
+
+/* Pastikan footer tidak ikut terdorong */
+footer {
+    flex-shrink: 0;
+}
