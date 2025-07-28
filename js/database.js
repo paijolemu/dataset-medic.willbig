@@ -1,11 +1,9 @@
-// INI ADALAH DATABASE UTAMA KITA
 const datasets = [
     {
         id: "pneumonia-v1",
         title: "Pneumonia Image Dataset (v1)",
         description: "Kumpulan gambar X-Ray dada untuk deteksi pneumonia.",
-        long_description: "Dataset awal kami untuk deteksi pneumonia, berisi 6 gambar X-Ray dada. Dataset ini sangat cocok untuk pengujian model awal atau untuk tujuan edukasi. Gambar telah dianonimkan dan siap digunakan.",
-        link: "detail.html?id=pneumonia-v1",
+        long_description: "Dataset awal kami untuk deteksi pneumonia, berisi 6 gambar X-Ray dada. Sangat cocok untuk pengujian model awal atau tujuan edukasi.",
         category: "citra-medis",
         tags: ["Citra Medis", "X-Ray", "Pneumonia"],
         zip_url: "https://raw.githack.com/paijolemu/dataset-medic.willbig/main/datasets/pneumonia-testing-versi1/testing.zip",
@@ -16,8 +14,7 @@ const datasets = [
         id: "kidney-stone-v1",
         title: "Kidney Stone (CT Scan) Dataset",
         description: "Kumpulan gambar dari CT Scan untuk identifikasi dan analisis batu ginjal.",
-        long_description: "Dataset ini berisi kumpulan gambar CT Scan untuk deteksi batu ginjal. Sangat berguna untuk melatih model klasifikasi atau segmentasi dalam pencitraan medis.",
-        link: "detail.html?id=kidney-stone-v1",
+        long_description: "Dataset ini berisi kumpulan gambar CT Scan untuk deteksi batu ginjal. Berguna untuk melatih model klasifikasi atau segmentasi.",
         category: "citra-medis",
         tags: ["Citra Medis", "CT Scan", "Batu Ginjal", "Urologi"],
         zip_url: "https://raw.githack.com/paijolemu/dataset-medic.willbig/main/datasets/batu-ginjal-ct-v1/data%20batu%20ginjal.zip",
@@ -28,7 +25,7 @@ const datasets = [
         id: "eeg-premium-v1",
         title: "[PREMIUM] EEG Brain Signal",
         description: "Dataset eksklusif berisi sinyal EEG mentah untuk analisis aktivitas otak. Akses terbatas.",
-        link: "login.html",
+        link_special: "login.html", // Link khusus untuk item non-detail
         category: "sinyal-medis",
         tags: ["Sinyal Medis", "EEG", "Premium"]
     }
