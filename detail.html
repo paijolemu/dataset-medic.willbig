@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Dataset - Paijo Willbig</title> <!-- Judul akan diubah oleh JS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <button class="toggle-btn" id="desktop-toggle-btn"><i class="fas fa-bars"></i></button>
+                <a href="index.html" class="logo">Paijo Willbig</a>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-link"><i class="fas fa-home"></i><span class="link-text">Beranda</span></a>
+                <a href="datasets.html" class="nav-link active"><i class="fas fa-database"></i><span class="link-text">Datasets</span></a>
+                <a href="about.html" class="nav-link"><i class="fas fa-users"></i><span class="link-text">Tentang Kami</span></a>
+            </nav>
+        </aside>
+        <!-- Header Mobile -->
+        <header class="mobile-header">
+            <a href="index.html" class="logo">Paijo Willbig</a>
+            <button class="toggle-btn" id="mobile-toggle-btn"><i class="fas fa-bars"></i></button>
+        </header>
+
+        <!-- Konten Halaman akan dibangun oleh JavaScript -->
+        <main class="main-content" id="detail-content">
+            <!-- Panggung untuk konten dinamis -->
+        </main>
+    </div>
+    
+    <div class="overlay" id="overlay"></div>
+    <!-- Script Wajib -->
+    <script src="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/filter.js"></script> <!-- "Buku Tamu" kita -->
+    
+    <!-- Script "Pelayan" yang membangun halaman ini -->
+    <script src="js/detail.js"></script>
+</body>
+</html>
