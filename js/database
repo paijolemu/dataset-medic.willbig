@@ -1,4 +1,4 @@
-// "DATABASE" UTAMA KITA - VERSI FINAL
+// INI ADALAH DATABASE UTAMA KITA
 const datasets = [
     {
         id: "pneumonia-v1",
@@ -9,10 +9,7 @@ const datasets = [
         category: "citra-medis",
         tags: ["Citra Medis", "X-Ray", "Pneumonia"],
         zip_url: "https://raw.githack.com/paijolemu/dataset-medic.willbig/main/datasets/pneumonia-testing-versi1/testing.zip",
-        images: [
-            "person100_bacteria_481.jpg", "person100_bacteria_480.jpg", "person100_bacteria_479.jpg",
-            "person100_bacteria_477.jpg", "person100_bacteria_475.jpg", "person100_bacteria_478.jpg"
-        ],
+        images: ["person100_bacteria_481.jpg", "person100_bacteria_480.jpg", "person100_bacteria_479.jpg", "person100_bacteria_477.jpg", "person100_bacteria_475.jpg", "person100_bacteria_478.jpg"],
         image_path: "https://github.com/paijolemu/dataset-medic.willbig/blob/main/datasets/pneumonia-testing-versi1/"
     },
     {
@@ -24,12 +21,7 @@ const datasets = [
         category: "citra-medis",
         tags: ["Citra Medis", "CT Scan", "Batu Ginjal", "Urologi"],
         zip_url: "https://raw.githack.com/paijolemu/dataset-medic.willbig/main/datasets/batu-ginjal-ct-v1/data%20batu%20ginjal.zip",
-        images: [
-            "1-3-46-670589-33-1-63700780314615924400001-465650393585309726474_png_jpg.rf.d4e842e4f0d5ca66addcadd37aa3e49d.jpg",
-            "1-3-46-670589-33-1-63703718086101119100001-4867318355234768205_png_jpg.rf.048e7b96df9b04ced19bff02cf2fb7af.jpg",
-            "1-3-46-670589-33-1-63703718086140121300001-4751980723480797909_png_jpg.rf.4613088faec825a93a3e03e97ce46323.jpg",
-            "1-3-46-670589-33-1-63703718086162122600001-5663486194805675763_png_jpg.rf.a4a19de71b774b45786c63f55a9a9016.jpg"
-        ],
+        images: ["1-3-46-670589-33-1-63700780314615924400001-465650393585309726474_png_jpg.rf.d4e842e4f0d5ca66addcadd37aa3e49d.jpg", "1-3-46-670589-33-1-63703718086101119100001-4867318355234768205_png_jpg.rf.048e7b96df9b04ced19bff02cf2fb7af.jpg", "1-3-46-670589-33-1-63703718086140121300001-4751980723480797909_png_jpg.rf.4613088faec825a93a3e03e97ce46323.jpg", "1-3-46-670589-33-1-63703718086162122600001-5663486194805675763_png_jpg.rf.a4a19de71b774b45786c63f55a9a9016.jpg"],
         image_path: "https://github.com/paijolemu/dataset-medic.willbig/blob/main/datasets/batu-ginjal-ct-v1/"
     },
     {
@@ -41,49 +33,3 @@ const datasets = [
         tags: ["Sinyal Medis", "EEG", "Premium"]
     }
 ];
-
-// Sisa kode di bawah ini 99% sama, hanya ada sedikit perubahan pada pembuatan link
-const container = document.getElementById('dataset-list-container');
-const searchInput = document.getElementById('searchInput');
-const filterBtns = document.querySelectorAll('.filter-btn');
-const noResultsMsg = document.querySelector('.no-results');
-let currentFilter = 'all';
-
-function displayDatasets(items) {
-    if (!container) return; // Keluar jika bukan di halaman datasets
-    container.innerHTML = '';
-    noResultsMsg.style.display = items.length === 0 ? 'block' : 'none';
-    items.forEach((item, index) => {
-        const card = document.createElement('div');
-        card.className = 'dataset-card animated-card';
-        card.style.animationDelay = `${index * 0.1}s`;
-        const tagsHTML = item.tags.map(tag => `<span>${tag}</span>`).join('');
-        card.innerHTML = `
-            <h2>${item.title}</h2>
-            <p>${item.description}</p>
-            <div class="tags">${tagsHTML}</div>
-            <a href="${item.link}" class="btn-card">${item.tags.includes('Premium') ? 'Dapatkan Akses' : 'Lihat Detail'}</a>`;
-        container.appendChild(card);
-    });
-}
-function filterAndSearch() {
-    const searchTerm = searchInput.value.toLowerCase();
-    let filteredItems = datasets.filter(item => {
-        const categoryMatch = currentFilter === 'all' || item.category === currentFilter;
-        const searchMatch = item.title.toLowerCase().includes(searchTerm) || item.description.toLowerCase().includes(searchTerm);
-        return categoryMatch && searchMatch;
-    });
-    displayDatasets(filteredItems);
-}
-if (container) { // Hanya jalankan jika kita di halaman datasets.html
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            currentFilter = btn.dataset.filter;
-            filterAndSearch();
-        });
-    });
-    searchInput.addEventListener('input', filterAndSearch);
-    displayDatasets(datasets);
-}
