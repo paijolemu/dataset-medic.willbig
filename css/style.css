@@ -1,5 +1,5 @@
 /* =================================================================== */
-/*                     Paijo Willbig - Master Stylesheet FINAL & STABIL  */
+/*                     Paijo Willbig - Master Stylesheet STABIL        */
 /* =================================================================== */
 
 /* === Import Font & Pengaturan Dasar === */
@@ -14,9 +14,14 @@ body { font-family: 'Poppins', sans-serif; margin: 0; background-color: #f4f7f6;
 .mobile-header { display: none; }
 .overlay { display: none; }
 
-/* === Komponen Sidebar === */
+/* Kondisi Sidebar Diciutkan */
+.sidebar.collapsed { width: 80px; }
+.sidebar.collapsed .logo, .sidebar.collapsed .link-text { opacity: 0; visibility: hidden; pointer-events: none; }
+body.sidebar-collapsed .main-content { margin-left: 80px; width: calc(100% - 80px); }
+
+/* Komponen Sidebar */
 .sidebar-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; min-height: 32px; }
-.logo { font-weight: 700; font-size: 1.4rem; color: #ffffff; text-decoration: none; white-space: nowrap; transition: opacity 0.2s ease, visibility 0.2s; }
+.logo { font-weight: 700; font-size: 1.4rem; color: #ffffff; text-decoration: none; white-space: nowrap; transition: opacity 0.3s ease-in-out, visibility 0.3s; }
 .toggle-btn { background: none; border: none; cursor: pointer; font-size: 1.1rem; color: #a0aec0; padding: 0.6rem; display: flex; align-items: center; justify-content: center; border-radius: 6px; transition: background-color 0.2s ease; }
 .toggle-btn:hover { background-color: rgba(255, 255, 255, 0.1); }
 .sidebar-nav { display: flex; flex-direction: column; gap: 0.5rem; }
@@ -24,19 +29,9 @@ body { font-family: 'Poppins', sans-serif; margin: 0; background-color: #f4f7f6;
 .nav-link i { font-size: 1rem; width: 18px; text-align: center; }
 .nav-link:hover { background-color: rgba(255, 255, 255, 0.1); color: #ffffff; }
 .nav-link.active { background-color: #00c9a7; color: #ffffff; font-weight: 600; }
-.link-text { transition: opacity 0.2s ease, visibility 0.2s; }
-
-/* === KONDISI SIDEBAR DICIUTKAN (DENGAN PERBAIKAN TOTAL) === */
-.sidebar.collapsed { width: 80px; }
+.link-text { transition: opacity 0.3s ease-in-out, visibility 0.3s; }
 .sidebar.collapsed .sidebar-header { justify-content: center; }
-.sidebar.collapsed .logo {
-    display: none; /* KUNCI UTAMA: Hapus logo dari layout, bukan hanya disembunyikan */
-}
-.sidebar.collapsed .link-text {
-    opacity: 0;
-    visibility: hidden;
-}
-body.sidebar-collapsed .main-content { margin-left: 80px; width: calc(100% - 80px); }
+.sidebar.collapsed .logo { display: none; }
 
 /* Media Query untuk Mobile */
 @media (max-width: 768px) {
@@ -56,8 +51,6 @@ body.sidebar-collapsed .main-content { margin-left: 80px; width: calc(100% - 80p
 .dataset-card { background-color: #ffffff; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; flex-direction: column; transition: transform 0.3s ease, box-shadow 0.3s ease; } .dataset-card:hover { transform: translateY(-8px); box-shadow: 0 10px 25px rgba(44, 62, 80, 0.1); } .dataset-card h2 { margin-top: 0; color: #2c3e50; font-size: 1.2rem; font-weight: 600; } .dataset-card p { flex-grow: 1; color: #666; font-size: 0.9rem; } .tags { margin: 1rem 0; display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; } .tags span { background-color: #e9ecef; color: #212529; padding: 0.25rem 0.6rem; border-radius: 50px; font-size: 0.75rem; font-weight: 600; border: 1px solid #dee2e6; } .btn-card { background-color: #00c9a7; color: white; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; text-align: center; transition: background-color 0.3s ease; margin-top: auto; } .btn-card:hover { background-color: #00a287; }
 .animated-card { opacity: 0; animation-name: fadeInUp; animation-duration: 0.6s; animation-timing-function: ease-out; animation-fill-mode: forwards; }
 @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-.controls { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem; } .search-wrapper { position: relative; flex-grow: 1; } .search-wrapper i { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #aaa; } #searchInput { width: 100%; padding: 0.8rem 1rem 0.8rem 40px; border: 1px solid #ddd; border-radius: 50px; box-sizing: border-box; font-size: 1rem; background-color: #fff; } .filter-wrapper { display: flex; gap: 0.5rem; background-color: #e9ecef; padding: 0.3rem; border-radius: 50px; } .filter-btn { border: none; background-color: transparent; padding: 0.6rem 1.2rem; border-radius: 50px; cursor: pointer; font-weight: 600; transition: all 0.3s ease; color: #555; } .filter-btn.active, .filter-btn:hover { background-color: #ffffff; color: #00c9a7; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-.no-results { grid-column: 1 / -1; text-align: center; font-size: 1.2rem; color: #777; margin-top: 2rem; }
 .section-title { text-align: center; font-size: 2.2rem; color: #2c3e50; margin-top: 4rem; margin-bottom: 2rem; position: relative; padding-bottom: 1rem; } .section-title::after { content: ''; position: absolute; width: 80px; height: 4px; background-color: #00c9a7; bottom: 0; left: 50%; transform: translateX(-50%); border-radius: 2px; }
 .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem; text-align: center; } .feature-item i { font-size: 3rem; color: #00c9a7; margin-bottom: 1rem; } .feature-item h3 { font-size: 1.4rem; color: #2c3e50; margin-bottom: 0.5rem; }
 .dataset-detail .btn { background-color: #3498db; color: white; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; text-align: center; transition: all 0.3s ease; display: inline-block; margin-top: 1rem; } .dataset-detail .btn:hover { background-color: #2980b9; transform: translateY(-2px); }
