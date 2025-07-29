@@ -143,3 +143,25 @@ footer { background-color: #1a253c; color: #a0aec0; padding: 2rem; text-align: c
         transform: translateY(0);
     }
 }
+/* ====================================================== */
+/*          PERBAIKAN FINAL UNTUK ANIMASI KARTU           */
+/* ====================================================== */
+
+.animated-card {
+    opacity: 0; /* Mulai dalam keadaan transparan */
+    animation-name: fadeInUp;
+    animation-duration: 0.6s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards; /* Tetap terlihat setelah animasi */
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
