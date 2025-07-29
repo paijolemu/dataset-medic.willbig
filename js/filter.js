@@ -15,8 +15,11 @@ document.addEventListener('DOMContentLoaded', function() {
         noResultsMsg.style.display = items.length === 0 ? 'block' : 'none';
         items.forEach((item, index) => {
             const card = document.createElement('div');
+            // KUNCI UTAMA: Tambahkan kelas 'animated-card'
             card.className = 'dataset-card animated-card';
+            // Beri delay agar muncul satu per satu
             card.style.animationDelay = `${index * 0.1}s`;
+            
             const tagsHTML = item.tags.map(tag => `<span>${tag.replace(/-/g, ' ')}</span>`).join('');
             card.innerHTML = `<h2>${item.title}</h2><p>${item.description}</p><div class="tags">${tagsHTML}</div><a href="${item.link}" class="btn-card">${item.tags.includes('premium') ? 'Dapatkan Akses' : 'Lihat Detail & Gambar'}</a>`;
             container.appendChild(card);
