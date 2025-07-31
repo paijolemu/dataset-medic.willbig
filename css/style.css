@@ -165,3 +165,28 @@ footer { background-color: #1a253c; color: #a0aec0; padding: 2rem; text-align: c
         transform: translateY(0);
     }
 }
+/* ====================================================== */
+/*          PERBAIKAN TATA LETAK HALAMAN DATASETS         */
+/* ====================================================== */
+
+.datasets-page-container {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* Membuat header di halaman dataset lebih menonjol */
+.datasets-page-container .content-header {
+    text-align: center;
+    border-bottom: none; /* Hapus garis bawah */
+    margin-bottom: 2rem;
+}
+.datasets-page-container .content-header h1 {
+    font-size: 2.5rem;
+}
+
+/* Merapikan jarak kontrol */
+.datasets-page-container .controls {
+    margin-bottom: 2.5rem;
+}
