@@ -86,5 +86,25 @@
     <div class="overlay" id="overlay"></div>
     <script src="js/main.js"></script>
     <!-- Kita belum mengaktifkan filter.js lagi untuk menjaga kestabilan -->
+    <!-- Library untuk efek ketik -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    
+    <!-- Script untuk mengaktifkan efek ketik pada search bar -->
+    <script>
+        var typedSearch = new Typed('#searchInput', {
+            strings: [
+                "Cari 'pneumonia'...",
+                "Cari 'ct scan'...",
+                "Cari berdasarkan penyakit...",
+                "Cari 'eeg'..."
+            ],
+            typeSpeed: 40,
+            backSpeed: 20,
+            attr: 'placeholder',
+            bindInputFocusEvents: true,
+            loop: true,
+            backDelay: 1500
+        });
+    </script>
 </body>
 </html>
