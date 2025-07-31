@@ -51,3 +51,63 @@ body.sidebar-collapsed .main-content { margin-left: 80px; width: calc(100% - 80p
 .cta-section { text-align: center; background-color: #fff; padding: 3rem 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); } .cta-section h2 { color: #2c3e50; margin-top: 0; } .cta-section .btn { background-color: #00c9a7; color: white; text-decoration: none; padding: 0.8rem 2rem; border-radius: 50px; font-weight: 600; display: inline-block; box-shadow: 0 4px 15px rgba(0, 201, 167, 0.3); animation: glowing-pulse 2.5s infinite ease-in-out; } .cta-section .btn:hover { background-color: #00a287; animation-play-state: paused; transform: translateY(-2px); }
 @keyframes glowing-pulse { 0% { transform: scale(1); box-shadow: 0 4px 15px rgba(0, 201, 167, 0.3); } 50% { transform: scale(1.05); box-shadow: 0 8px 30px rgba(0, 201, 167, 0.5); } 100% { transform: scale(1); box-shadow: 0 4px 15px rgba(0, 201, 167, 0.3); } }
 footer { background-color: #1a253c; color: #a0aec0; padding: 2rem; text-align: center; margin-top: auto; } .footer-content { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 1rem; } .footer-links a { color: #a0aec0; text-decoration: none; font-size: 1.5rem; transition: color 0.3s ease; } .footer-links a:hover { color: #00c9a7; }
+/* ====================================================== */
+/*          PERBAIKAN FINAL UNTUK FILTER & PENCARIAN      */
+/* ====================================================== */
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.search-wrapper {
+    position: relative;
+    flex-grow: 1; /* Agar mengisi ruang yang tersedia */
+}
+
+.search-wrapper i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 0.8rem 1rem 0.8rem 40px; /* Ruang untuk ikon search */
+    border: 1px solid #ddd;
+    border-radius: 50px; /* Membuatnya bulat */
+    box-sizing: border-box;
+    font-size: 1rem;
+    background-color: #fff;
+}
+
+.filter-wrapper {
+    display: flex;
+    gap: 0.5rem;
+    background-color: #e9ecef;
+    padding: 0.3rem;
+    border-radius: 50px; /* Membuat wadahnya bulat */
+}
+
+.filter-btn {
+    border: none;
+    background-color: transparent;
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px; /* Membuat tombolnya bulat */
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    color: #555;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background-color: #ffffff;
+    color: #00c9a7; /* Warna teal saat aktif */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Efek terangkat */
+}
