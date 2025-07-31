@@ -20,41 +20,48 @@
             </nav>
         </aside>
         <header class="mobile-header"><a href="index.html" class="logo">Paijo Willbig</a><button class="toggle-btn" id="mobile-toggle-btn"><i class="fas fa-bars"></i></button></header>
+        
         <main class="main-content">
-            <div class="controls">
-                <div class="search-wrapper"><i class="fas fa-search"></i><input type="text" id="searchInput" placeholder="Cari dataset (e.g., Pneumonia, CT Scan...)"></div>
-                <div class="filter-wrapper"><button class="filter-btn active" data-filter="all">Semua</button><button class="filter-btn" data-filter="citra-medis">Citra Medis</button><button class="filter-btn" data-filter="sinyal-medis">Sinyal Medis</button></div>
+            <!-- KONTENER BARU UNTUK KONTEN UTAMA HALAMAN INI -->
+            <div class="datasets-page-container">
+                <header class="content-header">
+                    <h1>Jelajahi Dataset</h1>
+                    <p>Temukan data yang tepat untuk proyek riset Anda berikutnya.</p>
+                </header>
+
+                <div class="controls">
+                    <div class="search-wrapper"><i class="fas fa-search"></i><input type="text" id="searchInput" placeholder="Cari dataset..."></div>
+                    <div class="filter-wrapper">
+                        <button class="filter-btn active" data-filter="all">Semua</button>
+                        <button class="filter-btn" data-filter="citra-medis">Citra Medis</button>
+                        <button class="filter-btn" data-filter="sinyal-medis">Sinyal Medis</button>
+                    </div>
+                </div>
+
+                <div class="dataset-list" id="dataset-list-container">
+                    <p class="no-results" style="display: none;">Tidak ada dataset yang cocok.</p>
+                </div>
             </div>
-            <div class="dataset-list" id="dataset-list-container">
-                <p class="no-results" style="display: none;">Tidak ada dataset yang cocok dengan kriteria Anda.</p>
+
+            <div class="container-fullwidth">
+                <section class="cta-section">
+                    <h2>Punya Dataset untuk Dibagikan?</h2>
+                    <p>Proyek ini berkembang berkat kontribusi komunitas. Mari berkolaborasi.</p>
+                    <a href="about.html" class="btn">Hubungi Kami</a>
+                </section>
             </div>
-            <div class="container-fullwidth"><section class="cta-section"><h2>Punya Dataset untuk Dibagikan?</h2><p>Proyek ini berkembang berkat kontribusi komunitas. Mari berkolaborasi.</p><a href="about.html" class="btn">Hubungi Kami</a></section></div>
             <footer><div class="footer-content"><p>© 2025 Paijo Willbig.</p><div class="footer-links"><a href="https://github.com/paijolemu/dataset-medic.willbig" target="_blank" title="Kode Sumber di GitHub"><i class="fab fa-github"></i></a></div></div></footer>
         </main>
     </div>
     <div class="overlay" id="overlay"></div>
     <script src="js/main.js"></script>
-    <script src="js/filter.js"></script> <!-- Koneksi ke "Otak" Filter -->
-        <!-- Library untuk efek ketik -->
+    <script src="js/filter.js"></script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    
-    <!-- Script untuk mengaktifkan efek ketik pada search bar -->
     <script>
         var typedSearch = new Typed('#searchInput', {
-            strings: [
-                "Cari dataset (e.g., Pneumonia, CT Scan...)",
-                "Cari berdasarkan penyakit...",
-                "Cari berdasarkan jenis citra...",
-                "Cari 'batu ginjal'..."
-            ],
-            typeSpeed: 40,
-            backSpeed: 20,
-            attr: 'placeholder', // Ini kunci utamanya: menganimasikan atribut placeholder
-            bindInputFocusEvents: true, // Berhenti saat pengguna mengklik kotak
-            loop: true,
-            backDelay: 1500
+            strings: ["Cari 'pneumonia'...", "Cari 'ct scan'...", "Cari berdasarkan penyakit...", "Cari 'eeg'..."],
+            typeSpeed: 40, backSpeed: 20, attr: 'placeholder', bindInputFocusEvents: true, loop: true, backDelay: 1500
         });
     </script>
-</body>
 </body>
 </html>
