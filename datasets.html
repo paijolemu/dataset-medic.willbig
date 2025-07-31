@@ -5,44 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daftar Dataset - Paijo Willbig</title>
     <link rel="icon" type="image/png" href="favicon.png">
-    <meta name="description" content="Jelajahi koleksi dataset medis kami. Filter dan cari data yang Anda butuhkan.">
+    <meta name="description" content="Jelajahi koleksi dataset medis kami, termasuk Pneumonia dan Batu Ginjal. Filter dan cari data yang Anda butuhkan.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="page-wrapper">
+        <!-- ===== SIDEBAR YANG HILANG - SEKARANG KEMBALI ===== -->
         <aside class="sidebar" id="sidebar">
-            <div class="sidebar-header"><button class="toggle-btn" id="desktop-toggle-btn"><i class="fas fa-bars"></i></button><a href="index.html" class="logo">Paijo Willbig</a></div>
+            <div class="sidebar-header">
+                <button class="toggle-btn" id="desktop-toggle-btn"><i class="fas fa-bars"></i></button>
+                <a href="index.html" class="logo">Paijo Willbig</a>
+            </div>
             <nav class="sidebar-nav">
                 <a href="index.html" class="nav-link"><i class="fas fa-home"></i><span class="link-text">Beranda</span></a>
                 <a href="datasets.html" class="nav-link active"><i class="fas fa-database"></i><span class="link-text">Datasets</span></a>
                 <a href="about.html" class="nav-link"><i class="fas fa-users"></i><span class="link-text">Tentang Kami</span></a>
             </nav>
         </aside>
-        <header class="mobile-header"><a href="index.html" class="logo">Paijo Willbig</a><button class="toggle-btn" id="mobile-toggle-btn"><i class="fas fa-bars"></i></button></header>
+
+        <!-- Header Mobile -->
+        <header class="mobile-header">
+            <a href="index.html" class="logo">Paijo Willbig</a>
+            <button class="toggle-btn" id="mobile-toggle-btn"><i class="fas fa-bars"></i></button>
+        </header>
         
         <main class="main-content">
-            <!-- KONTENER BARU UNTUK KONTEN UTAMA HALAMAN INI -->
-            <div class="datasets-page-container">
-                <header class="content-header">
-                    <h1>Jelajahi Dataset</h1>
-                    <p>Temukan data yang tepat untuk proyek riset Anda berikutnya.</p>
-                </header>
-
-                <div class="controls">
-                    <div class="search-wrapper"><i class="fas fa-search"></i><input type="text" id="searchInput" placeholder="Cari dataset..."></div>
-                    <div class="filter-wrapper">
-                        <button class="filter-btn active" data-filter="all">Semua</button>
-                        <button class="filter-btn" data-filter="citra-medis">Citra Medis</button>
-                        <button class="filter-btn" data-filter="sinyal-medis">Sinyal Medis</button>
-                    </div>
+            <!-- Filter dan Pencarian (tanpa judul di atasnya) -->
+            <div class="controls">
+                <div class="search-wrapper">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Cari dataset (e.g., Pneumonia, CT Scan...)">
                 </div>
-
-                <div class="dataset-list" id="dataset-list-container">
-                    <p class="no-results" style="display: none;">Tidak ada dataset yang cocok.</p>
+                <div class="filter-wrapper">
+                    <button class="filter-btn active" data-filter="all">Semua</button>
+                    <button class="filter-btn" data-filter="citra-medis">Citra Medis</button>
+                    <button class="filter-btn" data-filter="sinyal-medis">Sinyal Medis</button>
                 </div>
             </div>
 
+            <!-- Daftar Kartu Dataset -->
+            <div class="dataset-list" id="dataset-list-container">
+                <div class="dataset-card">
+                    <h2>Pneumonia Image Dataset (v1)</h2>
+                    <p>Kumpulan 6 gambar X-Ray dada untuk pengujian awal deteksi pneumonia.</p>
+                    <div class="tags"><span>Citra Medis</span><span>X-Ray</span><span>Pneumonia</span></div>
+                    <a href="pneumonia-details.html" class="btn-card">Lihat Detail & Gambar</a>
+                </div>
+                <div class="dataset-card">
+                    <h2>Kidney Stone (CT Scan) Dataset</h2>
+                    <p>Kumpulan gambar dari CT Scan untuk identifikasi dan analisis batu ginjal.</p>
+                    <div class="tags"><span>Citra Medis</span><span>CT Scan</span><span>Batu Ginjal</span></div>
+                    <a href="batu-ginjal-details.html" class="btn-card">Lihat Detail & Gambar</a>
+                </div>
+                <div class="dataset-card">
+                    <h2>[PREMIUM] EEG Brain Signal</h2>
+                    <p>Dataset eksklusif berisi sinyal EEG mentah untuk analisis aktivitas otak. Akses terbatas.</p>
+                    <div class="tags"><span>Sinyal Medis</span><span>EEG</span><span>Premium</span></div>
+                    <a href="login.html" class="btn-card">Dapatkan Akses</a>
+                </div>
+            </div>
+
+            <!-- CTA dan Footer -->
             <div class="container-fullwidth">
                 <section class="cta-section">
                     <h2>Punya Dataset untuk Dibagikan?</h2>
@@ -50,18 +74,17 @@
                     <a href="about.html" class="btn">Hubungi Kami</a>
                 </section>
             </div>
-            <footer><div class="footer-content"><p>© 2025 Paijo Willbig.</p><div class="footer-links"><a href="https://github.com/paijolemu/dataset-medic.willbig" target="_blank" title="Kode Sumber di GitHub"><i class="fab fa-github"></i></a></div></div></footer>
+            <footer>
+                <div class="footer-content">
+                    <p>© 2025 Paijo Willbig.</p>
+                    <div class="footer-links"><a href="https://github.com/paijolemu/dataset-medic.willbig" target="_blank" title="Kode Sumber di GitHub"><i class="fab fa-github"></i></a></div>
+                </div>
+            </footer>
         </main>
     </div>
+    
     <div class="overlay" id="overlay"></div>
     <script src="js/main.js"></script>
-    <script src="js/filter.js"></script>
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script>
-        var typedSearch = new Typed('#searchInput', {
-            strings: ["Cari 'pneumonia'...", "Cari 'ct scan'...", "Cari berdasarkan penyakit...", "Cari 'eeg'..."],
-            typeSpeed: 40, backSpeed: 20, attr: 'placeholder', bindInputFocusEvents: true, loop: true, backDelay: 1500
-        });
-    </script>
+    <!-- Kita belum mengaktifkan filter.js lagi untuk menjaga kestabilan -->
 </body>
 </html>
