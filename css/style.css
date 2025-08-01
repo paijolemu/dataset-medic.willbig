@@ -6,7 +6,16 @@ body { font-family: 'Poppins', sans-serif; margin: 0; background-color: #f4f7f6;
 .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
 .page-wrapper { display: flex; }
 .sidebar { width: 250px; background-color: #1a253c; color: #ffffff; height: 100vh; position: fixed; top: 0; left: 0; display: flex; flex-direction: column; padding: 1.5rem 1rem; box-sizing: border-box; transition: width 0.4s ease-in-out; overflow-x: hidden; z-index: 1001; }
-.main-content { margin-left: 250px; padding: 2rem; width: calc(100% - 250px); transition: margin-left 0.4s ease-in-out, width 0.4s ease-in-out; display: flex; flex-direction: column; min-height: calc(100vh - 4rem); }
+.main-content {
+    margin-left: 250px;
+    padding: 2rem;
+    width: calc(100% - 250px);
+    transition: margin-left 0.4s ease-in-out, width 0.4s ease-in-out;
+    /* === BARIS BARU DIMULAI DI SINI === */
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 4rem); /* 4rem = 2rem padding atas + 2rem padding bawah */
+}
 .mobile-header { display: none; }
 .overlay { display: none; }
 .sidebar.collapsed { width: 80px; }
@@ -97,11 +106,11 @@ body.sidebar-collapsed .main-content { margin-left: 80px; width: calc(100% - 80p
 
 @keyframes glowing-pulse { 0% { transform: scale(1); box-shadow: 0 4px 15px rgba(0, 201, 167, 0.3); } 50% { transform: scale(1.05); box-shadow: 0 8px 30px rgba(0, 201, 167, 0.5); } 100% { transform: scale(1); box-shadow: 0 4px 15px rgba(0, 201, 167, 0.3); } }
 footer {
-    background-color: transparent;
-    color: rgba(255, 255, 255, 0.7);
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    margin-top: 0;
+    background-color: #1a253c;
+    color: #a0aec0;
+    padding: 2rem;
+    text-align: center;
+    margin-top: auto; /* <-- TAMBAHKAN HANYA BARIS INI */
 }
 
 .footer-content p {
