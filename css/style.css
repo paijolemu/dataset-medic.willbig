@@ -47,10 +47,76 @@ body.sidebar-collapsed .main-content { margin-left: 80px; width: calc(100% - 80p
 .preview-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem;} .preview-grid img, .lightbox-image { width: 100%; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; } .lightbox-image:hover { transform: scale(1.05); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
 .about-content { background-color: #fff; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
 .login-container { max-width: 400px; margin: 3rem auto; padding: 2.5rem; background-color: #fff; border-radius: 12px; box-shadow: 0 10px 25px rgba(44, 62, 80, 0.1); text-align: center; } .login-container h2 { color: #2c3e50; margin-top: 0; } .login-container button { width: 100%; padding: 0.8rem; margin-top: 1.5rem; border: none; border-radius: 50px; background-color: #3498db; color: white; font-weight: 600; cursor: pointer; transition: background-color 0.3s ease; } .login-container button:hover { background-color: #2980b9; } .login-container input[type="password"], .login-container input[type="text"] { width: 100%; padding: 0.8rem 40px 0.8rem 1rem; margin-top: 1rem; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; } .password-wrapper { position: relative; width: 100%; } .password-wrapper i { position: absolute; top: 58%; right: 15px; transform: translateY(-50%); cursor: pointer; color: #aaa; }
-.container-fullwidth { width: 100%; margin-top: 4rem; }
-.cta-section { text-align: center; background-color: #fff; padding: 3rem 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); } .cta-section h2 { color: #2c3e50; margin-top: 0; } .cta-section .btn { background-color: #00c9a7; color: white; text-decoration: none; padding: 0.8rem 2rem; border-radius: 50px; font-weight: 600; display: inline-block; box-shadow: 0 4px 15px rgba(0, 201, 167, 0.3); animation: glowing-pulse 2.5s infinite ease-in-out; } .cta-section .btn:hover { background-color: #00a287; animation-play-state: paused; transform: translateY(-2px); }
+/* ====================================================== */
+/*          PERBAIKAN FINAL UNTUK CTA & FOOTER            */
+/* ====================================================== */
+
+.container-fullwidth {
+    width: 100%;
+    margin-top: auto; /* KUNCI UTAMA: Mendorong blok ini ke bawah */
+    padding: 4rem 2rem;
+    box-sizing: border-box;
+    color: white;
+    text-align: center;
+    /* Menggunakan gradien yang sama dengan hero section */
+    background: linear-gradient(-45deg, #00c9a7, #1a253c, #2980b9, #00c9a7);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+}
+.cta-section {
+    background-color: transparent;
+    padding: 0;
+    box-shadow: none;
+    margin-bottom: 3rem; /* Jarak antara CTA dan footer */
+}
+
+.cta-section h2 {
+    color: white;
+    font-size: 2.5rem;
+    margin-top: 0;
+}
+
+.cta-section p {
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 1rem auto;
+}
+
+.cta-section .btn {
+    background-color: #ffffff;
+    color: #1a253c;
+    animation: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.cta-section .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
 @keyframes glowing-pulse { 0% { transform: scale(1); box-shadow: 0 4px 15px rgba(0, 201, 167, 0.3); } 50% { transform: scale(1.05); box-shadow: 0 8px 30px rgba(0, 201, 167, 0.5); } 100% { transform: scale(1); box-shadow: 0 4px 15px rgba(0, 201, 167, 0.3); } }
-footer { background-color: #1a253c; color: #a0aec0; padding: 2rem; text-align: center; margin-top: auto; } .footer-content { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 1rem; } .footer-links a { color: #a0aec0; text-decoration: none; font-size: 1.5rem; transition: color 0.3s ease; } .footer-links a:hover { color: #00c9a7; }
+footer {
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.7);
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 0;
+}
+
+.footer-content p {
+    margin-bottom: 1rem;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+}
 /* ====================================================== */
 /*          PERBAIKAN FINAL UNTUK FILTER & PENCARIAN      */
 /* ====================================================== */
